@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceship Design Tools | Joshua Silva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+          box-sizing: border-box;
+        }
+        
+        :root {
+            --accent-color: #ff6b35;
+            --accent-hover: #ff8555;
+            --background-dark: #0d0d0d;
+            --background-darker: #060606;
+            --text-white: #ffffff;
+            --text-gray: #999999;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background-darker);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(6, 6, 6, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .back-btn {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-btn:hover {
+            color: var(--accent-hover);
+        }
+        
+        .project-hero {
+            padding: 8rem 3rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .project-header {
+            margin-bottom: 3rem;
+        }
+        
+        .project-category {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .project-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .project-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            font-weight: 300;
+        }
+        
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--background-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-item h3 {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-item p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 4rem;
+            font-weight: 900;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+        }
+        
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .content-section p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .content-section li {
+            color: var(--text-gray);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .content-section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .gallery-caption {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .back-to-portfolio {
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+        
+        .back-btn-large {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-color);
+            color: var(--background-darker);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .back-btn-large:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem;
+            }
+            
+            .project-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+            
+            .project-title {
+                font-size: 2.5rem;
+            }
+            
+            .project-content {
+                padding: 3rem 1.5rem;
+            }
+            
+            .featured-image {
+                height: 400px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">JOSHUA SILVA</div>
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </nav>
+
+    <section class="project-hero">
+        <div class="project-header">
+            <p class="project-category">Technical Exercise</p>
+            <h1 class="project-title">Spaceship Design Tools</h1>
+            <p class="project-subtitle">Designer</p>
+        </div>
+        
+        <div class="project-info-grid">
+            <div class="info-item">
+                <h3>Role</h3>
+                <p>Designer</p>
+            </div>
+            <div class="info-item">
+                <h3>Timeline</h3>
+                <p>2023</p>
+            </div>
+            <div class="info-item">
+                <h3>Engine</h3>
+                <p>Unreal Engine 5</p>
+            </div>
+            <div class="info-item">
+                <h3>Team Size</h3>
+                <p>Solo Project</p>
+            </div>
+        </div>
+        
+        <div class="featured-image">
+            FEATURED IMAGE
+            <!-- TO ADD IMAGE: <img src="images/spaceship-featured.jpg" alt="Spaceship"> -->
+        </div>
+    </section>
+
+    <section class="project-content">
+        
+        <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+                A technical exercise exploring Unreal Engine 5's design tools, efficient asset pipelines, 
+                and lighting/material systems implementation. This project focused on understanding the 
+                engine's capabilities and workflows for creating compelling visual experiences.
+            </p>
+            <p>
+                As a learning-focused project, I experimented with various UE5 tools and systems, from 
+                material creation to lighting setups. The goal was to build a strong technical foundation 
+                that would support more complex design work in future projects.
+            </p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Visual Showcase</h2>
+            <div class="image-gallery">
+                <div>
+                    <div class="gallery-item">
+                        IMAGE 1
+                        <!-- <img src="images/spaceship-1.jpg" alt="Screenshot 1"> -->
+                    </div>
+                    <p class="gallery-caption">Material system showcase</p>
+                </div>
+                <div>
+                    <div class="gallery-item">
+                        IMAGE 2
+                        <!-- <img src="images/spaceship-2.jpg" alt="Screenshot 2"> -->
+                    </div>
+                    <p class="gallery-caption">Lighting setup</p>
+                </div>
+                <div>
+                    <div class="gallery-item">
+                        IMAGE 3
+                        <!-- <img src="images/spaceship-3.jpg" alt="Screenshot 3"> -->
+                    </div>
+                    <p class="gallery-caption">Asset pipeline workflow</p>
+                </div>
+                <div>
+                    <div class="gallery-item">
+                        VIDEO
+                        <!-- <video controls><source src="images/spaceship-showcase.mp4" type="video/mp4"></video> -->
+                    </div>
+                    <p class="gallery-caption">Technical demonstration</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>My Contributions</h2>
+            <ul>
+                <li>Explored Unreal Engine 5 design toolset and workflows for efficient development</li>
+                <li>Implemented efficient asset pipelines for streamlined content creation</li>
+                <li>Experimented with lighting systems to understand mood and atmosphere creation</li>
+                <li>Created and customized materials using UE5's material editor</li>
+                <li>Documented technical processes and best practices for future reference</li>
+                <li>Tested performance optimization techniques and profiling tools</li>
+                <li>Learned version control integration with Unreal Engine projects</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>Challenges & Solutions</h2>
+            <p>
+                <strong>Challenge:</strong> Understanding the complexity of Unreal Engine 5's material system.
+            </p>
+            <p>
+                <strong>Solution:</strong> Broke down learning into manageable chunks, starting with basic 
+                materials and progressively adding complexity. Created a personal library of reusable material 
+                functions and documented each technique for future reference.
+            </p>
+            <p>
+                <strong>Challenge:</strong> Optimizing visual quality while maintaining performance.
+            </p>
+            <p>
+                <strong>Solution:</strong> Learned to use UE5's profiling tools to identify bottlenecks. 
+                Experimented with LOD systems, material complexity reduction, and lighting optimizations 
+                to achieve a balance between visual fidelity and frame rate.
+            </p>
+        </div>
+        
+        <div class="content-section">
+            <h2>What I Learned</h2>
+            <p>
+                This project provided essential technical knowledge about Unreal Engine 5's architecture 
+                and toolset. Understanding how assets flow through the engine, how materials are constructed, 
+                and how lighting affects performance became foundational knowledge for all my subsequent work.
+            </p>
+            <p>
+                I discovered that technical constraints often drive creative solutions. Learning the "why" 
+                behind engine systems helped me make better design decisions in later projects, as I could 
+                anticipate technical implications of design choices.
+            </p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Technologies & Tools</h2>
+            <div class="tags">
+                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">Material Editor</span>
+                <span class="tag">Lighting Systems</span>
+                <span class="tag">Asset Pipeline</span>
+                <span class="tag">Performance Optimization</span>
+                <span class="tag">Technical Documentation</span>
+                <span class="tag">Version Control</span>
+                <span class="tag">Design Tools</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="back-to-portfolio">
+        <a href="index.html#work" class="back-btn-large">← Back to All Projects</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Joshua Silva. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
