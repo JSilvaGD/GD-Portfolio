@@ -305,6 +305,102 @@
             text-align: center;
         }
         
+        /* About Section */
+        .about-section {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 3rem;
+            font-weight: 900;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .about-role {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .about-text {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-highlights {
+            margin-top: 2rem;
+        }
+        
+        .about-highlights h3 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .about-highlights ul {
+            list-style: none;
+        }
+        
+        .about-highlights li {
+            color: var(--text-gray);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .about-highlights li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
         .contact-content {
             max-width: 700px;
             margin: 0 auto;
@@ -405,6 +501,7 @@
     <nav>
         <div class="logo">JOSHUA SILVA</div>
         <ul>
+            <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -434,6 +531,62 @@
             
             <!-- BUTTON -->
             <a href="#work" class="cta-btn">View Projects</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT ME SECTION
+         Tell your story and showcase your journey
+         ============================================ -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            
+            <!-- YOUR PHOTO -->
+            <div class="about-image">
+                PHOTO
+                <!-- TO ADD YOUR PHOTO: Replace line above with:
+                <img src="images/joshua-photo.jpg" alt="Joshua Silva"> -->
+            </div>
+            
+            <!-- ABOUT CONTENT -->
+            <div class="about-content">
+                <!-- SECTION TITLE -->
+                <h2>About Me</h2>
+                
+                <!-- YOUR CURRENT ROLE -->
+                <p class="about-role">Game Designer & Gameplay Programmer</p>
+                
+                <!-- YOUR STORY - Edit these paragraphs -->
+                <p class="about-text">
+                    I'm a passionate game designer and programmer with a Bachelor's degree in Game Design 
+                    from Full Sail University. Currently working as a Gameplay Programmer Intern at T'sarE LLC, 
+                    I specialize in Unreal Engine 5, Blueprint scripting, and C++ development.
+                </p>
+                
+                <p class="about-text">
+                    My approach combines creative design thinking with technical implementation skills, 
+                    allowing me to bridge the gap between vision and reality. I'm driven by the challenge 
+                    of creating immersive player experiences through innovative gameplay systems, responsive 
+                    mechanics, and thoughtful level design.
+                </p>
+                
+                <p class="about-text">
+                    When I'm not designing levels or prototyping mechanics, I'm playtesting games, studying 
+                    player psychology, and exploring new technologies in the game development space.
+                </p>
+                
+                <!-- QUICK HIGHLIGHTS -->
+                <div class="about-highlights">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li>📍 Based in Houston, Texas</li>
+                        <li>🎓 B.S. in Game Design - Full Sail University (2025)</li>
+                        <li>💼 Gameplay Programmer Intern at T'sarE LLC</li>
+                        <li>🎮 Specializing in UE5, Blueprint, and C++</li>
+                        <li>🏆 Completed multiple team-based game projects</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -656,7 +809,7 @@
             </div>
             
             <!-- RESUME DOWNLOAD BUTTON -->
-            <a href="Josha_Silva_GD_GP_Resume.pdf" download class="resume-btn">Download Resume</a>
+            <a href="Joshua_Silva_GD_GP_Resume.pdf" download class="resume-btn">Download Resume</a>
         </div>
     </section>
 
