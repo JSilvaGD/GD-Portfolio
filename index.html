@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joshua Silva | Game Designer Portfolio</title>
     <style>
+        /* ============================================
+           EASY CUSTOMIZATION SECTION
+           Change colors and fonts here!
+           ============================================ */
+        :root {
+            /* COLORS - Change these to customize your theme */
+            --accent-color: #ff6b35;        /* Orange - Main accent color */
+            --accent-hover: #ff8555;        /* Lighter orange for hover */
+            --background-dark: #0d0d0d;     /* Main background */
+            --background-darker: #060606;   /* Darker sections */
+            --text-white: #ffffff;          /* Main text color */
+            --text-gray: #999999;           /* Secondary text color */
+        }
+        
+        /* ============================================
+           YOU DON'T NEED TO EDIT BELOW THIS LINE
+           (Unless you want to change styling)
+           ============================================ */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        :root {
-            --bg-dark: #0d0d0d;
-            --bg-darker: #060606;
-            --text-primary: #ffffff;
-            --text-secondary: #999999;
-            --accent: #ff6b35;
-            --accent-hover: #ff8555;
-        }
-        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-darker);
-            color: var(--text-primary);
+            background: var(--background-darker);
+            color: var(--text-white);
             line-height: 1.6;
         }
         
@@ -53,7 +63,7 @@
         }
         
         nav a {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
@@ -61,7 +71,7 @@
         }
         
         nav a:hover {
-            color: var(--accent);
+            color: var(--accent-color);
         }
         
         /* Hero Section */
@@ -87,19 +97,19 @@
         
         .hero-subtitle {
             font-size: 1.3rem;
-            color: var(--text-secondary);
+            color: var(--text-gray);
             margin-bottom: 0.5rem;
         }
         
         .hero-role {
-            color: var(--accent);
+            color: var(--accent-color);
             font-size: 1.1rem;
             margin-bottom: 2.5rem;
         }
         
         .hero-description {
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            color: var(--text-gray);
             line-height: 1.8;
             max-width: 600px;
             margin: 0 auto 3rem;
@@ -108,8 +118,8 @@
         .cta-btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--accent);
-            color: var(--bg-darker);
+            background: var(--accent-color);
+            color: var(--background-darker);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -143,10 +153,9 @@
         }
         
         .project-tile {
-            background: var(--bg-dark);
+            background: var(--background-dark);
             position: relative;
             overflow: hidden;
-            cursor: pointer;
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
@@ -211,7 +220,7 @@
         }
         
         .project-role {
-            color: var(--accent);
+            color: var(--accent-color);
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -219,7 +228,7 @@
         }
         
         .project-description {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -230,175 +239,20 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: auto;
-            margin-bottom: 1rem;
         }
         
         .tag {
             background: rgba(255, 255, 255, 0.05);
             padding: 0.4rem 0.9rem;
             font-size: 0.75rem;
-            color: var(--text-secondary);
+            color: var(--text-gray);
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .view-more {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-        
-        .project-tile:hover .view-more {
-            gap: 1rem;
-        }
-        
-        /* Modal/Expanded View */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 2000;
-            overflow-y: auto;
-            padding: 2rem;
-        }
-        
-        .modal.active {
-            display: block;
-        }
-        
-        .modal-content {
-            max-width: 1200px;
-            margin: 4rem auto;
-            background: var(--bg-dark);
-            padding: 3rem;
-            position: relative;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 2rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.3s;
-        }
-        
-        .modal-close:hover {
-            color: var(--accent);
-        }
-        
-        .modal-header {
-            margin-bottom: 2rem;
-        }
-        
-        .modal-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .modal-role {
-            color: var(--accent);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .modal-media {
-            margin: 2rem 0;
-        }
-        
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .media-item {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .media-item img,
-        .media-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .modal-description {
-            margin: 2rem 0;
-        }
-        
-        .modal-description h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        
-        .modal-description p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .modal-highlights {
-            margin: 2rem 0;
-        }
-        
-        .modal-highlights h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        
-        .modal-highlights ul {
-            list-style: none;
-        }
-        
-        .modal-highlights li {
-            color: var(--text-secondary);
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            line-height: 1.8;
-        }
-        
-        .modal-highlights li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
         }
         
         /* Skills Section */
         .skills-section {
             padding: 6rem 3rem;
-            background: var(--bg-dark);
+            background: var(--background-dark);
         }
         
         .skills-container {
@@ -419,11 +273,11 @@
         }
         
         .skill-card:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-color);
         }
         
         .skill-card h3 {
-            color: var(--accent);
+            color: var(--accent-color);
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
@@ -434,14 +288,14 @@
         }
         
         .skill-card li {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             padding: 0.5rem 0;
             font-size: 0.95rem;
         }
         
         .skill-card li::before {
             content: "•";
-            color: var(--accent);
+            color: var(--accent-color);
             margin-right: 0.75rem;
         }
         
@@ -463,7 +317,7 @@
         }
         
         .contact-content p {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             font-size: 1.1rem;
             margin-bottom: 3rem;
         }
@@ -476,14 +330,33 @@
         }
         
         .contact-link {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             text-decoration: none;
             font-size: 1.05rem;
             transition: color 0.3s;
         }
         
         .contact-link:hover {
-            color: var(--accent);
+            color: var(--accent-color);
+        }
+        
+        .resume-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-color);
+            color: var(--background-darker);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .resume-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
         }
         
         /* Footer */
@@ -491,7 +364,7 @@
             padding: 3rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
+            color: var(--text-gray);
             font-size: 0.9rem;
         }
         
@@ -509,10 +382,6 @@
                 font-size: 3rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
             .projects-section {
                 padding: 3rem 1.5rem;
             }
@@ -520,35 +389,6 @@
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .skills-section {
-                padding: 4rem 1.5rem;
-            }
-            
-            .contact-section {
-                padding: 4rem 1.5rem;
-            }
-            
-            .contact-content h2 {
-                font-size: 2.5rem;
-            }
-            
-            .modal-content {
-                padding: 2rem 1.5rem;
-                margin: 2rem auto;
-            }
-            
-            .modal-title {
-                font-size: 2rem;
-            }
-            
-            .media-grid {
-                grid-template-columns: 1fr;
             }
         }
         
@@ -558,6 +398,10 @@
     </style>
 </head>
 <body>
+    <!-- ============================================
+         NAVIGATION BAR
+         Edit your name/logo and menu links here
+         ============================================ -->
     <nav>
         <div class="logo">JOSHUA SILVA</div>
         <ul>
@@ -567,51 +411,75 @@
         </ul>
     </nav>
 
+    <!-- ============================================
+         HERO SECTION (Top of page)
+         Edit your name, title, and description
+         ============================================ -->
     <section class="hero">
         <div class="hero-content">
+            <!-- YOUR NAME -->
             <h1>Joshua Silva</h1>
+            
+            <!-- YOUR JOB TITLE -->
             <p class="hero-subtitle">Game Designer & Gameplay Programmer</p>
+            
+            <!-- YOUR SPECIALTY -->
             <p class="hero-role">Unreal Engine 5 Specialist</p>
+            
+            <!-- YOUR BIO/DESCRIPTION -->
             <p class="hero-description">
                 Creating immersive gameplay experiences through innovative systems design, 
                 rapid prototyping, and technical implementation.
             </p>
+            
+            <!-- BUTTON -->
             <a href="#work" class="cta-btn">View Projects</a>
         </div>
     </section>
 
+    <!-- ============================================
+         PROJECTS SECTION
+         Add/Edit your projects below
+         ============================================ -->
     <section id="work" class="projects-section">
         <h2 class="section-title">Featured Work</h2>
         
         <div class="projects-grid">
-            <div class="project-tile" onclick="openModal('shadowborne')">
+            
+            <!-- PROJECT 1: SHADOWBORNE -->
+            <div class="project-tile">
                 <div class="project-image">
                     01
-                    <!-- Add your image here: <img src="path-to-shadowborne-image.jpg" alt="Shadowborne"> -->
+                    <!-- TO ADD IMAGE: Replace line above with:
+                    <img src="images/shadowborne.jpg" alt="Shadowborne"> -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
+                        <!-- PROJECT TITLE -->
                         <h3 class="project-title">Shadowborne</h3>
+                        <!-- YOUR ROLE -->
                         <span class="project-role">Capstone</span>
                     </div>
+                    <!-- PROJECT DESCRIPTION -->
                     <p class="project-description">
                         Advanced gameplay design showcasing responsive UI/UX systems, precision combat mechanics, 
-                        and adaptive AI.
+                        and adaptive AI. Led QA documentation through complete development cycle.
                     </p>
+                    <!-- PROJECT TAGS/SKILLS -->
                     <div class="project-tags">
                         <span class="tag">Gameplay Design</span>
                         <span class="tag">QA Testing</span>
                         <span class="tag">Level Design</span>
                         <span class="tag">Combat Systems</span>
                     </div>
-                    <div class="view-more">View Full Project →</div>
                 </div>
             </div>
 
-            <div class="project-tile" onclick="openModal('fps')">
+            <!-- PROJECT 2: FPS TEAM PROJECT -->
+            <div class="project-tile">
                 <div class="project-image">
                     02
-                    <!-- Add your image here: <img src="path-to-fps-image.jpg" alt="FPS Project"> -->
+                    <!-- TO ADD IMAGE: <img src="images/fps-project.jpg" alt="FPS Project"> -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
@@ -619,7 +487,8 @@
                         <span class="project-role">Gameplay Designer</span>
                     </div>
                     <p class="project-description">
-                        Collaborative first-person shooter featuring modular weapon systems and dual-resource UI.
+                        Collaborative first-person shooter featuring modular weapon systems and dual-resource UI. 
+                        Integrated environmental hazards using Niagara VFX system.
                     </p>
                     <div class="project-tags">
                         <span class="tag">FPS Mechanics</span>
@@ -627,14 +496,14 @@
                         <span class="tag">Agile Dev</span>
                         <span class="tag">VFX</span>
                     </div>
-                    <div class="view-more">View Full Project →</div>
                 </div>
             </div>
 
-            <div class="project-tile" onclick="openModal('adventure')">
+            <!-- PROJECT 3: ADVENTURE LEVEL DESIGN -->
+            <div class="project-tile">
                 <div class="project-image">
                     03
-                    <!-- Add your image here: <img src="path-to-adventure-image.jpg" alt="Adventure"> -->
+                    <!-- TO ADD IMAGE: <img src="images/adventure.jpg" alt="Adventure"> -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
@@ -642,21 +511,23 @@
                         <span class="project-role">Level Designer</span>
                     </div>
                     <p class="project-description">
-                        Indiana Jones-inspired adventure level with puzzle systems and environmental storytelling.
+                        Indiana Jones-inspired adventure level with puzzle systems, environmental storytelling, 
+                        and intuitive navigation through landmarks and leading lines.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Level Design</span>
                         <span class="tag">Puzzles</span>
                         <span class="tag">Asset Integration</span>
+                        <span class="tag">Perforce</span>
                     </div>
-                    <div class="view-more">View Full Project →</div>
                 </div>
             </div>
 
-            <div class="project-tile" onclick="openModal('stackobot')">
+            <!-- PROJECT 4: STACK O BOT -->
+            <div class="project-tile">
                 <div class="project-image">
                     04
-                    <!-- Add your image here: <img src="path-to-stackobot-image.jpg" alt="Stack O Bot"> -->
+                    <!-- TO ADD IMAGE: <img src="images/stackobot.jpg" alt="Stack O Bot"> -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
@@ -664,21 +535,23 @@
                         <span class="project-role">Mechanic Designer</span>
                     </div>
                     <p class="project-description">
-                        Mechanic-focused project exploring physics-based interactions and refined control schemes.
+                        Mechanic-focused project exploring physics-based interactions and refined control schemes 
+                        through rapid prototyping and iterative playtesting.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Mechanics</span>
                         <span class="tag">Blueprint</span>
                         <span class="tag">Prototyping</span>
+                        <span class="tag">Physics</span>
                     </div>
-                    <div class="view-more">View Full Project →</div>
                 </div>
             </div>
 
-            <div class="project-tile" onclick="openModal('spaceship')">
+            <!-- PROJECT 5: SPACESHIP DESIGN TOOLS -->
+            <div class="project-tile">
                 <div class="project-image">
                     05
-                    <!-- Add your image here: <img src="path-to-spaceship-image.jpg" alt="Spaceship"> -->
+                    <!-- TO ADD IMAGE: <img src="images/spaceship.jpg" alt="Spaceship"> -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
@@ -686,212 +559,125 @@
                         <span class="project-role">Designer</span>
                     </div>
                     <p class="project-description">
-                        Technical exercise exploring Unreal Engine 5 design tools and asset pipelines.
+                        Technical exercise exploring Unreal Engine 5 design tools, efficient asset pipelines, 
+                        and lighting/material systems implementation.
                     </p>
                     <div class="project-tags">
                         <span class="tag">UE5 Tools</span>
                         <span class="tag">Asset Pipeline</span>
                         <span class="tag">Materials</span>
+                        <span class="tag">Lighting</span>
                     </div>
-                    <div class="view-more">View Full Project →</div>
                 </div>
+            </div>
+            
+            <!-- TO ADD MORE PROJECTS: Copy one of the project blocks above and edit the content -->
+            
+        </div>
+    </section>
+
+    <!-- ============================================
+         SKILLS SECTION
+         Edit your skills and tools here
+         ============================================ -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            <div class="skills-grid">
+                
+                <!-- SKILL CATEGORY 1 -->
+                <div class="skill-card">
+                    <h3>Game Engines & Programming</h3>
+                    <ul>
+                        <li>Unreal Engine 5</li>
+                        <li>Blueprint Visual Scripting</li>
+                        <li>Unity</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+
+                <!-- SKILL CATEGORY 2 -->
+                <div class="skill-card">
+                    <h3>Design Specialties</h3>
+                    <ul>
+                        <li>Gameplay Systems</li>
+                        <li>Level Design</li>
+                        <li>Mechanics Design</li>
+                        <li>Combat Systems</li>
+                        <li>Player Experience</li>
+                    </ul>
+                </div>
+
+                <!-- SKILL CATEGORY 3 -->
+                <div class="skill-card">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Perforce</li>
+                        <li>Git</li>
+                        <li>Jira & Confluence</li>
+                        <li>Visual Studio</li>
+                        <li>3DS Max</li>
+                    </ul>
+                </div>
+
+                <!-- SKILL CATEGORY 4 -->
+                <div class="skill-card">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Rapid Prototyping</li>
+                        <li>Iterative Playtesting</li>
+                        <li>Cross-Discipline Collaboration</li>
+                        <li>Technical Documentation</li>
+                        <li>QA & Testing</li>
+                    </ul>
+                </div>
+                
+                <!-- TO ADD MORE SKILL CATEGORIES: Copy one skill-card block and edit -->
+                
             </div>
         </div>
     </section>
 
-    <!-- Modal for Shadowborne -->
-    <div id="modal-shadowborne" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('shadowborne')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Shadowborne</h2>
-                <p class="modal-role">Capstone Project | Gameplay Designer/Programmer & QA Lead</p>
+    <!-- ============================================
+         CONTACT SECTION
+         Edit your contact information here
+         ============================================ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2>Let's Work Together</h2>
+            <p>I'm always interested in new opportunities and collaborations in game development.</p>
+            
+            <!-- CONTACT LINKS - Edit your email, phone, and social media -->
+            <div class="contact-links">
+                <a href="mailto:joshua.silva8@icloud.com" class="contact-link">joshua.silva8@icloud.com</a>
+                <a href="tel:3465886840" class="contact-link">(346) 588-6840</a>
+                <a href="https://www.linkedin.com/in/joshua-silva8/" target="_blank" class="contact-link">LinkedIn</a>
             </div>
             
-            <div class="modal-media">
-                <div class="media-grid">
-                    <div class="media-item">
-                        <!-- Add your images/videos here -->
-                        <p>Image/Video Placeholder 1</p>
-                        <!-- <img src="shadowborne-1.jpg" alt="Shadowborne Screenshot 1"> -->
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 2</p>
-                        <!-- <video controls><source src="shadowborne-video.mp4" type="video/mp4"></video> -->
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 3</p>
-                        <!-- <img src="shadowborne-3.jpg" alt="Shadowborne Screenshot 3"> -->
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                    Shadowborne was my comprehensive capstone project at Full Sail University, demonstrating advanced 
-                    gameplay design and QA methodologies. The project focused on creating immersive combat experiences 
-                    with responsive systems and environmental storytelling, showcasing my ability to bridge the gap 
-                    between design vision and technical implementation.
-                </p>
-                <p>
-                    As both the Gameplay Designer/Programmer and QA Lead, I was responsible for designing level layouts, 
-                    implementing gameplay systems using Blueprint and C++, and ensuring quality through rigorous testing 
-                    and documentation. The project emphasized player engagement through precision-timed combat mechanics 
-                    and adaptive AI systems.
-                </p>
-            </div>
-            
-            <div class="modal-highlights">
-                <h3>Key Contributions</h3>
-                <ul>
-                    <li>Designed immersive level layouts emphasizing environmental storytelling, pacing, and player engagement</li>
-                    <li>Implemented responsive UI/UX healing systems and precision-timed combat mechanics using Blueprint and C++</li>
-                    <li>Developed adaptive enemy AI systems to enhance gameplay variety and challenge progression</li>
-                    <li>Led QA documentation through Jira for comprehensive issue tracking and cross-team coordination</li>
-                    <li>Conducted iterative playtesting sessions to refine mechanics and ensure quality player experiences</li>
-                </ul>
-            </div>
-            
-            <div class="project-tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Blueprint</span>
-                <span class="tag">C++</span>
-                <span class="tag">Gameplay Design</span>
-                <span class="tag">Level Design</span>
-                <span class="tag">Combat Systems</span>
-                <span class="tag">AI Programming</span>
-                <span class="tag">UI/UX</span>
-                <span class="tag">QA Testing</span>
-                <span class="tag">Jira</span>
-            </div>
+            <!-- RESUME DOWNLOAD BUTTON -->
+            <a href="Joshua_Silva_Resume.pdf" download class="resume-btn">Download Resume</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Modal for FPS Project -->
-    <div id="modal-fps" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('fps')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">FPS Team Project</h2>
-                <p class="modal-role">Gameplay/Mechanic Designer</p>
-            </div>
-            
-            <div class="modal-media">
-                <div class="media-grid">
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 1</p>
-                        <!-- Add your media here -->
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 2</p>
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 3</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                    A collaborative first-person shooter project built in Unreal Engine 5, demonstrating agile 
-                    development practices and modular system design. This project emphasized scalable gameplay 
-                    features and team collaboration in a fast-paced development environment.
-                </p>
-                <p>
-                    Working in an agile team, I focused on creating flexible combat systems that could adapt to 
-                    different playstyles. The modular weapon system and dual-resource UI were designed to provide 
-                    meaningful player choice and real-time feedback during intense combat scenarios.
-                </p>
-            </div>
-            
-            <div class="modal-highlights">
-                <h3>Key Contributions</h3>
-                <ul>
-                    <li>Collaborated in agile team to design and develop first-person shooter experience in Unreal Engine 5</li>
-                    <li>Programmed modular weapon system with interchangeable components for flexible combat options</li>
-                    <li>Designed and implemented dual-resource UI system providing real-time combat feedback</li>
-                    <li>Integrated Niagara-based environmental hazards to increase level interactivity and player engagement</li>
-                    <li>Participated in daily standups and sprint planning to maintain project momentum</li>
-                </ul>
-            </div>
-            
-            <div class="project-tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Blueprint</span>
-                <span class="tag">FPS Mechanics</span>
-                <span class="tag">Weapon Systems</span>
-                <span class="tag">UI Design</span>
-                <span class="tag">Niagara VFX</span>
-                <span class="tag">Agile Development</span>
-                <span class="tag">Team Collaboration</span>
-            </div>
-        </div>
-    </div>
+    <!-- ============================================
+         FOOTER
+         Edit copyright text here
+         ============================================ -->
+    <footer>
+        <p>&copy; 2025 Joshua Silva. All rights reserved.</p>
+    </footer>
 
-    <!-- Modal for Adventure -->
-    <div id="modal-adventure" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('adventure')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Adventure Level Design</h2>
-                <p class="modal-role">Level Designer/Gameplay Programmer</p>
-            </div>
-            
-            <div class="modal-media">
-                <div class="media-grid">
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 1</p>
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 2</p>
-                    </div>
-                    <div class="media-item">
-                        <p>Image/Video Placeholder 3</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-description">
-                <h3>Project Overview</h3>
-                <p>
-                    An adventure-themed level design project inspired by Indiana Jones and Tomb Raider, focusing on 
-                    creating intuitive navigation, environmental storytelling, and cohesive team collaboration. This 
-                    project emphasized player-driven exploration through clever use of landmarks and visual cues.
-                </p>
-                <p>
-                    As part of a team of designers, I was responsible for creating my own section of a larger connected 
-                    level while maintaining consistency with the overall adventure theme. The project required careful 
-                    asset selection, puzzle design, and use of source control for seamless team integration.
-                </p>
-            </div>
-            
-            <div class="modal-highlights">
-                <h3>Key Contributions</h3>
-                <ul>
-                    <li>Designed gate and valve puzzle systems optimizing player progression, flow, and navigation clarity</li>
-                    <li>Implemented Blueprint-based mechanics using environmental storytelling, landmarks, and leading lines</li>
-                    <li>Utilized Perforce source control for team collaboration and seamless asset integration</li>
-                    <li>Managed asset sourcing and integration from Epic Games Marketplace while maintaining theme consistency</li>
-                    <li>Conducted peer playtesting to gather feedback and refine level design decisions</li>
-                </ul>
-            </div>
-            
-            <div class="project-tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Level Design</span>
-                <span class="tag">Puzzle Design</span>
-                <span class="tag">Blueprint</span>
-                <span class="tag">Environmental Storytelling</span>
-                <span class="tag">Asset Integration</span>
-                <span class="tag">Perforce</span>
-                <span class="tag">Team Collaboration</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Stack O Bot -->
-    <div id="modal-stackobot" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('stackobot')">×</button>
+    <!-- Smooth scrolling script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
