@@ -493,7 +493,64 @@
         </ul>
     </div>
 </div>
+        <!-- Top-Down Shooter Documentation Section -->
+        <div class="content-section" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0) 100%); padding: 3rem; margin: 4rem -3rem; border-left: 4px solid #06b6d4;">
+            <h2 style="color: #06b6d4;">Top-Down Shooter Development Documentation</h2>
+            <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.8;">
+                Our team's first collaborative project served as the foundation for our later FPS work. This documentation 
+                captures our initial exploration of Unreal Engine 5, team dynamics, and core combat systems that would later 
+                be adapted and refined.
+            </p>
 
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #06b6d4; margin-bottom: 1rem;">Mechanics & Iteration Log</h3>
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
+                    This document chronicles the development of our top-down shooter prototype, featuring 11 unique gameplay elements including mouse-driven aiming and WASD movement, two distinct enemy types (normal ranged and kamikaze), stationary turrets with adjustable AI parameters, environmental spike hazards, health and speed boost pickups, and a 30-wave survival system. Through extensive dev playtesting, the team iteratively balanced the experience by slowing enemy projectiles (100→60cm/s), dramatically increasing kamikaze threat level (150→500cm/s movement speed), tripling player survivability (4→8 max health), expanding health pickups (3→8), adding tactical turret placement (1→5 turrets with refined 115° line-of-sight), and strategically distributing speed boosts (1→3 pickups with 5-second duration). These data-driven adjustments transformed the initial prototype from a static, defensive experience into a dynamic, movement-focused arena shooter that encouraged aggressive player positioning and strategic resource management.
+                </p>
+                <div class="image-gallery">
+                    <div>
+                        <a href="topdown-doc-1.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="topdown-doc-1.png" alt="Top-Down Shooter Mechanics Documentation Page 1">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Core Mechanics Implementation</p>
+                    </div>
+                    <div>
+                        <a href="topdown-doc-2.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="topdown-doc-2.png" alt="Top-Down Shooter Mechanics Documentation Page 2">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Playtesting & Balance Iterations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-dark); border-left: 4px solid #06b6d4;">
+                <h4 style="color: #06b6d4; font-size: 1.1rem; margin-bottom: 1rem;">
+                    Key Development Insights
+                </h4>
+                <ul style="list-style: none; color: var(--text-gray);">
+                    <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: #06b6d4;">→</span>
+                        Early-stage prototyping focused on establishing foundational combat systems
+                    </li>
+                    <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: #06b6d4;">→</span>
+                        Iterative balancing through quantitative playtesting data (speed values, health counts, wave duration)
+                    </li>
+                    <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: #06b6d4;">→</span>
+                        Shift from defensive to aggressive gameplay through strategic pickup placement
+                    </li>
+                    <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                        <span style="position: absolute; left: 0; color: #06b6d4;">→</span>
+                        Foundation established for modular systems later refined in FPS project
+                    </li>
+                </ul>
+            </div>
+        </div>
 <!-- Call of Board Analog Game Section -->
 <div class="content-section" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 107, 53, 0) 100%); padding: 3rem; margin: 4rem -3rem; border-left: 4px solid var(--accent-color);">
     <h2 style="display: flex; align-items: center; gap: 1rem;">
