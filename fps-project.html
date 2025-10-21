@@ -263,6 +263,48 @@
             font-size: 0.9rem;
         }
         
+        .challenge-box {
+            background: var(--background-dark);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .challenge-box h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-box p {
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-box strong {
+            color: var(--text-white);
+        }
+        
+        .challenge-box {
+            background: var(--background-dark);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .challenge-box h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-box p {
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-box strong {
+            color: var(--text-white);
+        }
+        
         @media (max-width: 768px) {
             nav {
                 padding: 1.5rem;
@@ -328,63 +370,60 @@
         
         <div class="featured-image">
             FEATURED IMAGE
-            <img src="fps-featured.png" alt="FPS Project">
+            <!-- TO ADD IMAGE: <img src="images/fps-featured.jpg" alt="FPS Project"> -->
         </div>
     </section>
 
     <section class="project-content">
         
         <div class="content-section">
-    <h2>Project Overview</h2>
-    <p>
-        A collaborative multi-phase project built in Unreal Engine 5, showcasing our team's versatility 
-        across different gameplay perspectives and mediums. This comprehensive project included three distinct 
-        deliverables: a first-person shooter, a top-down shooter adaptation, and an analog board game conversion 
-        called "Call of Board." Each phase demonstrated agile development practices, modular system design, and 
-        our ability to translate core mechanics across different formats.
-    </p>
-    <p>
-        Working in an agile team environment with Anthony Tran, Kira Stout, Seth Chambers, and Vincent Campbell, 
-        I focused on creating flexible weapon systems and dual-resource UI mechanics that could adapt across both 
-        digital shooter perspectives. The first-person shooter emphasized responsive combat mechanics and 
-        environmental navigation, while the top-down variation challenged us to recontextualize the same systems 
-        from an overhead perspective, requiring adjustments to camera systems, player feedback, and spatial awareness.
-    </p>
-    <p>
-        The analog "Call of Board" adaptation represented our most ambitious design challenge—translating real-time 
-        FPS mechanics into turn-based tabletop gameplay. This conversion introduced asymmetric player roles (Escaper 
-        vs. Controller), dice-based combat resolution, and strategic board layout design. The exercise deepened our 
-        understanding of fundamental game design principles that transcend medium, revealing how pacing, player agency, 
-        and strategic depth fundamentally shift between real-time digital and turn-based analog formats.
-    </p>
-</div>
+            <h2>Project Overview</h2>
+            <p>
+                A collaborative multi-phase project built in Unreal Engine 5, showcasing our team's versatility 
+                across different gameplay perspectives and mediums. This comprehensive project included three distinct 
+                deliverables: a first-person shooter, a top-down shooter adaptation, and an analog board game conversion 
+                called "Call of Board." Each phase demonstrated agile development practices, modular system design, and 
+                our ability to translate core mechanics across different formats.
+            </p>
+            <p>
+                Working in an agile team environment with Anthony Tran, Kira Stout, Seth Chambers, and Vincent Campbell, 
+                I focused on creating flexible weapon systems and dual-resource UI mechanics that could adapt across both 
+                digital shooter perspectives. The first-person shooter emphasized responsive combat mechanics and 
+                environmental navigation, while the top-down variation challenged us to recontextualize the same systems 
+                from an overhead perspective, requiring adjustments to camera systems, player feedback, and spatial awareness.
+            </p>
+            <p>
+                The analog "Call of Board" adaptation represented our most ambitious design challenge—translating real-time 
+                FPS mechanics into turn-based tabletop gameplay. This conversion introduced asymmetric player roles (Escaper 
+                vs. Controller), dice-based combat resolution, and strategic board layout design. The exercise deepened our 
+                understanding of fundamental game design principles that transcend medium, revealing how pacing, player agency, 
+                and strategic depth fundamentally shift between real-time digital and turn-based analog formats.
+            </p>
+        </div>
         
         <div class="content-section">
             <h2>Visual Showcase</h2>
             <div class="image-gallery">
                 <div>
                     <div class="gallery-item">
-                        IMAGE 1
-                      <img src="fps-1.jpg" alt="FPS-1">
+                        <img src="fps-1.jpg" alt="FPS Weapon System">
                     </div>
                     <p class="gallery-caption">Weapon system demonstration</p>
                 </div>
                 <div>
                     <div class="gallery-item">
-                        IMAGE 2
-                       <img src="fps-2.jpg" alt="FPS-2">
+                        <img src="fps-2.jpg" alt="FPS UI Interface">
                     </div>
                     <p class="gallery-caption">Dual-resource UI interface</p>
                 </div>
                 <div>
                     <div class="gallery-item">
-                        IMAGE 3
-                       <img src="fps-3.jpg" alt="FPS-3">
+                        <img src="fps-3.jpg" alt="FPS Environmental Hazards">
                     </div>
                     <p class="gallery-caption">Niagara environmental hazards</p>
                 </div>
                 <div>
-                  <div class="gallery-item">
+                    <div class="gallery-item">
                         <iframe 
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                             src="https://www.youtube.com/embed/GX2DU52uhGY" 
@@ -398,107 +437,85 @@
                 </div>
             </div>
         </div>
-        <!-- Documentation Section -->
-<div class="content-section">
-    <h2>Development Documentation</h2>
-    <p style="color: var(--text-gray); margin-bottom: 2rem;">
-        Throughout the project, our team maintained comprehensive documentation to ensure clear communication, 
-        track design decisions, and facilitate onboarding. These documents showcase our professional approach 
-        to game development and collaborative workflow management.
-    </p>
 
-    <!-- Document 1: Game Mechanics & Development -->
-    <div style="margin-bottom: 3rem;">
-        <h3 style="color: var(--primary-orange); margin-bottom: 1rem;">Game Mechanics & Development Log</h3>
-        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
-            This document details the core gameplay systems and iterative design process for the FPS project. The team implemented 15+ unique mechanics including a dual health/shield system, three distinct enemy types (flying, ranged, and kamikaze), environmental hazards, weapon pickups, power-ups (invincibility), breakable walls, shifting doors with pressure plates, and a checkpoint system. Through rigorous dev playtesting, the team balanced difficulty by adjusting enemy placement, increasing player survivability (health: 5→30, shields: 10→20), fine-tuning movement physics for platforming sections, and reducing environmental damage. All five team members unanimously agreed the FPS game surpassed their previous top-down shooter, citing better level design, more polished mechanics, enhanced player immersion, and efficient use of reusable assets that allowed deeper focus on gameplay refinement.
-        </p>
-        <div class="image-gallery">
-            <div>
-                <a href="fps-doc-1.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer; transition: transform 0.3s;">
-                        <img src="fps-doc-1.png" alt="Game Mechanics Documentation Page 1">
+        <!-- FPS Documentation Section -->
+        <div class="content-section">
+            <h2>FPS Development Documentation</h2>
+            <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                Throughout the FPS project, our team maintained comprehensive documentation to ensure clear communication, 
+                track design decisions, and facilitate onboarding. These documents showcase our professional approach 
+                to game development and collaborative workflow management.
+            </p>
+
+            <!-- Document 1: Game Mechanics & Development -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Game Mechanics & Development Log</h3>
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
+                    This document details the core gameplay systems and iterative design process for the FPS project. The team implemented 15+ unique mechanics including a dual health/shield system, three distinct enemy types (flying, ranged, and kamikaze), environmental hazards, weapon pickups, power-ups (invincibility), breakable walls, shifting doors with pressure plates, and a checkpoint system. Through rigorous dev playtesting, the team balanced difficulty by adjusting enemy placement, increasing player survivability (health: 5→30, shields: 10→20), fine-tuning movement physics for platforming sections, and reducing environmental damage. All five team members unanimously agreed the FPS game surpassed their previous top-down shooter, citing better level design, more polished mechanics, enhanced player immersion, and efficient use of reusable assets that allowed deeper focus on gameplay refinement.
+                </p>
+                <div class="image-gallery">
+                    <div>
+                        <a href="fps-doc-1.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="fps-doc-1.png" alt="Game Mechanics Documentation Page 1">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Mechanics Implementation Overview</p>
                     </div>
-                </a>
-                <p class="gallery-caption">Mechanics Implementation Overview</p>
+                    <div>
+                        <a href="fps-doc-2.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="fps-doc-2.png" alt="Game Mechanics Documentation Page 2">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Dev Playtesting & Balance Changes</p>
+                    </div>
+                    <div>
+                        <a href="fps-doc-3.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="fps-doc-3.png" alt="Game Mechanics Documentation Page 3">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Team Comparative Analysis</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Document 2: Player Communication Systems -->
             <div>
-                <a href="fps-doc-2.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer;">
-                        <img src="fps-doc-2.png" alt="Game Mechanics Documentation Page 2">
+                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Player Communication Systems</h3>
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
+                    This document showcases 18 communication enhancements designed to bridge the gap between player and game. The team implemented comprehensive visual feedback (UI improvements like bullet icons replacing text, color-coded health bars matching pickups, directional indicators on sliding walls, unique breakable wall textures), auditory cues (weapon firing sounds, collection audio for pickups and weapons, environmental sounds for moving doors), and screen effects (red flash for damage, green/blue overlays for health/shield restoration, invincibility timer). Playtesting with non-experienced gamers revealed significant improvements: players better understood pickup functions, felt more immersed through sound design, and could navigate environmental puzzles more intuitively. The communication additions transformed a functional game into a cohesive, player-friendly experience that successfully guided players without explicit instruction.
+                </p>
+                <div class="image-gallery">
+                    <div>
+                        <a href="fps-doc-4.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="fps-doc-4.png" alt="Communication Systems Documentation Page 1">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Visual & Audio Feedback Systems</p>
                     </div>
-                </a>
-                <p class="gallery-caption">Dev Playtesting & Balance Changes</p>
-            </div>
-            <div>
-                <a href="fps-doc-3.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer;">
-                        <img src="fps-doc-3.png" alt="Game Mechanics Documentation Page 3">
+                    <div>
+                        <a href="fps-doc-5.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="fps-doc-5.png" alt="Communication Systems Documentation Page 2">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">UI/UX Enhancement Details</p>
                     </div>
-                </a>
-                <p class="gallery-caption">Team Comparative Analysis</p>
+                    <div>
+                        <a href="fps-doc-6.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="fps-doc-6.png" alt="Communication Systems Documentation Page 3">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Playtesting Feedback & Iteration Results</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Document 2: Player Communication Systems -->
-    <div>
-        <h3 style="color: var(--primary-orange); margin-bottom: 1rem;">Player Communication Systems</h3>
-        <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 1.5rem;">
-            This document showcases 18 communication enhancements designed to bridge the gap between player and game. The team implemented comprehensive visual feedback (UI improvements like bullet icons replacing text, color-coded health bars matching pickups, directional indicators on sliding walls, unique breakable wall textures), auditory cues (weapon firing sounds, collection audio for pickups and weapons, environmental sounds for moving doors), and screen effects (red flash for damage, green/blue overlays for health/shield restoration, invincibility timer). Playtesting with non-experienced gamers revealed significant improvements: players better understood pickup functions, felt more immersed through sound design, and could navigate environmental puzzles more intuitively. The communication additions transformed a functional game into a cohesive, player-friendly experience that successfully guided players without explicit instruction.
-        </p>
-        <div class="image-gallery">
-            <div>
-                <a href="fps-doc-4.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer;">
-                        <img src="fps-doc-4.png" alt="Communication Systems Documentation Page 1">
-                    </div>
-                </a>
-                <p class="gallery-caption">Visual & Audio Feedback Systems</p>
-            </div>
-            <div>
-                <a href="fps-doc-5.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer;">
-                        <img src="fps-doc-5.png" alt="Communication Systems Documentation Page 2">
-                    </div>
-                </a>
-                <p class="gallery-caption">UI/UX Enhancement Details</p>
-            </div>
-            <div>
-                <a href="fps-doc-6.png" target="_blank" style="display: block; text-decoration: none;">
-                    <div class="gallery-item" style="cursor: pointer;">
-                        <img src="fps-doc-6.png" alt="Communication Systems Documentation Page 3">
-                    </div>
-                </a>
-                <p class="gallery-caption">Playtesting Feedback & Iteration Results</p>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-dark); border-left: 4px solid var(--accent-color);">
-        <h4 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 1rem;">
-            Documentation Highlights
-        </h4>
-        <ul style="list-style: none; color: var(--text-gray);">
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                <span style="position: absolute; left: 0; color: var(--accent-color);"></span>
-                Comprehensive game design documents detailing core mechanics and systems
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                <span style="position: absolute; left: 0; color: var(--accent-color);"></span>
-                Technical architecture documentation for modular weapon system
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                <span style="position: absolute; left: 0; color: var(--accent-color);"></span>
-                Agile sprint planning with clear task assignments and timelines
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                <span style="position: absolute; left: 0; color: var(--accent-color);"></span>
-                Detailed playtesting feedback logs driving iterative improvements
-            </li>
-        </ul>
-    </div>
-</div>
         <!-- Top-Down Shooter Documentation Section -->
         <div class="content-section" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0) 100%); padding: 3rem; margin: 4rem -3rem; border-left: 4px solid #06b6d4;">
             <h2 style="color: #06b6d4;">Top-Down Shooter Development Documentation</h2>
@@ -557,266 +574,275 @@
                 </ul>
             </div>
         </div>
-<!-- Call of Board Analog Game Section -->
-<div class="content-section" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 107, 53, 0) 100%); padding: 3rem; margin: 4rem -3rem; border-left: 4px solid var(--accent-color);">
-    <h2 style="display: flex; align-items: center; gap: 1rem;">
-        <span style="background: var(--accent-color); color: var(--background-darker); width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;"></span>
-        Call of Board - Analog Game Adaptation
-    </h2>
-    <p style="color: var(--text-gray); margin-bottom: 1rem; line-height: 1.8;">
-        As a creative design exercise, our five-person team (Anthony Tran, Joshua Silva, Kira Stout, Seth Chambers, 
-        and Vincent Campbell) translated our digital first-person shooter into a strategic tabletop board game. This 
-        adaptation challenged us to convert real-time FPS mechanics into turn-based tactical gameplay while maintaining 
-        the core experience of navigating enemy-filled environments.
-    </p>
-    <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.8;">
-        Call of Board introduces a unique 2-player asymmetric experience where one player becomes the "Escaper" 
-        (navigating the board) while the other acts as the "Controller" (designing the board layout and controlling 
-        enemies). This competitive dynamic replaced the single-player digital experience with strategic player-versus-player 
-        confrontation, adding extensive replayability through variable board layouts.
-    </p>
-    
-    <div class="image-gallery" style="margin-top: 2rem;">
-        <div>
-            <a href="call-of-board-1.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-1.png" alt="Call of Board Cover & Team">
-                </div>
-            </a>
-            <p class="gallery-caption">Title page with team credits and game overview</p>
-        </div>
-        <div>
-            <a href="call-of-board-2.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-2.png" alt="Designer's Intent & Materials">
-                </div>
-            </a>
-            <p class="gallery-caption">Designer's intent, target audience, and complete materials list</p>
-        </div>
-        <div>
-            <a href="call-of-board-3.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-3.png" alt="Setup & Core Rules">
-                </div>
-            </a>
-            <p class="gallery-caption">Game setup instructions and fundamental gameplay rules</p>
-        </div>
-        <div>
-            <a href="call-of-board-4.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-4.png" alt="Combat & Enemy Types">
-                </div>
-            </a>
-            <p class="gallery-caption">Enemy types, combat mechanics, and damage resolution systems</p>
-        </div>
-        <div>
-            <a href="call-of-board-5.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-5.png" alt="Weapons, Pickups & Win Conditions">
-                </div>
-            </a>
-            <p class="gallery-caption">Weapon types, pickup effects, and victory conditions</p>
-        </div>
-        <div>
-            <a href="call-of-board-6.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-6.png" alt="Developer's Log & Analysis">
-                </div>
-            </a>
-            <p class="gallery-caption">Developer insights, playtesting feedback, and medium comparison analysis</p>
-        </div>
-    </div>
-    <!-- Map Tiles Showcase - Add this after the main Call of Board gallery -->
-<div style="margin-top: 3rem;">
-    <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 1rem;">
-        Printable Map Tiles
-    </h3>
-    <p style="color: var(--text-gray); margin-bottom: 1.5rem; line-height: 1.8;">
-        Our team designed four unique map tiles that could be arranged in various configurations to create 
-        different board layouts. Each tile features a grid-based movement system with designated entry and 
-        exit points, allowing the Controller to build diverse tactical scenarios. These printable tiles 
-        demonstrate our approach to modular level design adapted for tabletop play.
-    </p>
-    
-    <div class="image-gallery">
-        <div>
-            <a href="call-of-board-map1.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-map1.png" alt="Call of Board Map Tile 1">
-                </div>
-            </a>
-            <p class="gallery-caption">Map Tile 1
-        <div>
-            <a href="call-of-board-map2.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-map2.png" alt="Call of Board Map Tile 2">
-                </div>
-            </a>
-            <p class="gallery-caption">Map Tile 2
-        <div>
-            <a href="call-of-board-map3.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-map3.png" alt="Call of Board Map Tile 3">
-                </div>
-            </a>
-            <p class="gallery-caption">Map Tile 3
-        <div>
-            <a href="call-of-board-map4.png" target="_blank" style="display: block; text-decoration: none;">
-                <div class="gallery-item" style="cursor: pointer;">
-                    <img src="call-of-board-map4.png" alt="Call of Board Map Tile 4">
-                </div>
-            </a>
-            <p class="gallery-caption">Map Tile 4
-    </div>
-    
-    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 107, 53, 0.1); border-left: 3px solid var(--accent-color);">
-        <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-            <strong style="color: var(--text-white);">Design Note:</strong> Map tiles can be combined in 
-            1-4 tile configurations, creating up to 24 unique board layouts when accounting for rotation 
-            and arrangement possibilities. This modular approach ensures high replayability while keeping 
-            Controller board setup within reasonable time constraints.
-        </p>
-    </div>
-</div>
-    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-darker); border: 1px solid rgba(255, 107, 53, 0.3);">
-        <h4 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 1rem;">
-            Digital-to-Analog Translation Challenges
-        </h4>
-        <div style="color: var(--text-gray); line-height: 1.8;">
-            <p style="margin-bottom: 1rem;">
-                Converting our first-person shooter required fundamental rethinking of core systems. The biggest 
-                challenge wasn't simply adapting existing mechanics—it was creating entirely new rules and objectives 
-                that captured the essence of the digital experience in an analog format.
+
+        <!-- Call of Board Analog Game Section -->
+        <div class="content-section" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 107, 53, 0) 100%); padding: 3rem; margin: 4rem -3rem; border-left: 4px solid var(--accent-color);">
+            <h2 style="display: flex; align-items: center; gap: 1rem;">
+                <span style="background: var(--accent-color); color: var(--background-darker); width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎲</span>
+                Call of Board - Analog Game Adaptation
+            </h2>
+            <p style="color: var(--text-gray); margin-bottom: 1rem; line-height: 1.8;">
+                As a creative design exercise, our five-person team (Anthony Tran, Joshua Silva, Kira Stout, Seth Chambers, 
+                and Vincent Campbell) translated our digital first-person shooter into a strategic tabletop board game. This 
+                adaptation challenged us to convert real-time FPS mechanics into turn-based tactical gameplay while maintaining 
+                the core experience of navigating enemy-filled environments.
             </p>
-            <ul style="list-style: none;">
-                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
-                    <strong style="color: var(--text-white);">Enemy AI to Player Control:</strong> Simple AI-controlled enemies became Controller-managed units with activation ranges (4-6 tiles) and dice-based damage systems (Normal: 6HP/0-3 damage, Flying: 4HP/0-2 damage, Kamikaze: 3HP/1-2 damage)
-                </li>
-                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
-                    <strong style="color: var(--text-white);">Real-Time to Turn-Based:</strong> Fast movement inputs converted to dice roll movement (Escaper: 2d6, Controller: 1d6) with tactical positioning replacing twitch reflexes
-                </li>
-                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
-                    <strong style="color: var(--text-white);">Time-Based to Turn-Based Buffs:</strong> Invincibility changed from 5-second duration to 3-turn protection, requiring new balance considerations
-                </li>
-                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
-                    <strong style="color: var(--text-white);">Level Design to Board Layout:</strong> Multiple digital rooms became modular map tiles (1-4 tiles per game) with Controller-imposed limitations (max 6 traps, 6 enemies, 4 pickups per tile)
-                </li>
-                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
-                    <strong style="color: var(--text-white);">Vertical Movement Loss:</strong> 3D navigation reduced to 2D grid movement, fundamentally changing strategy and pacing
-                </li>
-            </ul>
+            <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.8;">
+                Call of Board introduces a unique 2-player asymmetric experience where one player becomes the "Escaper" 
+                (navigating the board) while the other acts as the "Controller" (designing the board layout and controlling 
+                enemies). This competitive dynamic replaced the single-player digital experience with strategic player-versus-player 
+                confrontation, adding extensive replayability through variable board layouts.
+            </p>
+            
+            <div class="image-gallery" style="margin-top: 2rem;">
+                <div>
+                    <a href="call-of-board-1.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-1.png" alt="Call of Board Cover & Team">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Title page with team credits and game overview</p>
+                </div>
+                <div>
+                    <a href="call-of-board-2.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-2.png" alt="Designer's Intent & Materials">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Designer's intent, target audience, and complete materials list</p>
+                </div>
+                <div>
+                    <a href="call-of-board-3.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-3.png" alt="Setup & Core Rules">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Game setup instructions and fundamental gameplay rules</p>
+                </div>
+                <div>
+                    <a href="call-of-board-4.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-4.png" alt="Combat & Enemy Types">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Enemy types, combat mechanics, and damage resolution systems</p>
+                </div>
+                <div>
+                    <a href="call-of-board-5.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-5.png" alt="Weapons, Pickups & Win Conditions">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Weapon types, pickup effects, and victory conditions</p>
+                </div>
+                <div>
+                    <a href="call-of-board-6.png" target="_blank" style="display: block; text-decoration: none;">
+                        <div class="gallery-item" style="cursor: pointer;">
+                            <img src="call-of-board-6.png" alt="Developer's Log & Analysis">
+                        </div>
+                    </a>
+                    <p class="gallery-caption">Developer insights, playtesting feedback, and medium comparison analysis</p>
+                </div>
+            </div>
+
+            <!-- Map Tiles Showcase -->
+            <div style="margin-top: 3rem;">
+                <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 1rem;">
+                    Printable Map Tiles
+                </h3>
+                <p style="color: var(--text-gray); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Our team designed four unique map tiles that could be arranged in various configurations to create 
+                    different board layouts. Each tile features a grid-based movement system with designated entry and 
+                    exit points, allowing the Controller to build diverse tactical scenarios. These printable tiles 
+                    demonstrate our approach to modular level design adapted for tabletop play.
+                </p>
+                
+                <div class="image-gallery">
+                    <div>
+                        <a href="call-of-board-map1.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="call-of-board-map1.png" alt="Call of Board Map Tile 1">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Map Tile 1</p>
+                    </div>
+                    <div>
+                        <a href="call-of-board-map2.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="call-of-board-map2.png" alt="Call of Board Map Tile 2">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Map Tile 2</p>
+                    </div>
+                    <div>
+                        <a href="call-of-board-map3.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="call-of-board-map3.png" alt="Call of Board Map Tile 3">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Map Tile 3</p>
+                    </div>
+                    <div>
+                        <a href="call-of-board-map4.png" target="_blank" style="display: block; text-decoration: none;">
+                            <div class="gallery-item" style="cursor: pointer;">
+                                <img src="call-of-board-map4.png" alt="Call of Board Map Tile 4">
+                            </div>
+                        </a>
+                        <p class="gallery-caption">Map Tile 4</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 107, 53, 0.1); border-left: 3px solid var(--accent-color);">
+                    <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        <strong style="color: var(--text-white);">Design Note:</strong> Map tiles can be combined in 
+                        1-4 tile configurations, creating up to 24 unique board layouts when accounting for rotation 
+                        and arrangement possibilities. This modular approach ensures high replayability while keeping 
+                        Controller board setup within reasonable time constraints.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-darker); border: 1px solid rgba(255, 107, 53, 0.3);">
+                <h4 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 1rem;">
+                    Digital-to-Analog Translation Challenges
+                </h4>
+                <div style="color: var(--text-gray); line-height: 1.8;">
+                    <p style="margin-bottom: 1rem;">
+                        Converting our first-person shooter required fundamental rethinking of core systems. The biggest 
+                        challenge wasn't simply adapting existing mechanics—it was creating entirely new rules and objectives 
+                        that captured the essence of the digital experience in an analog format.
+                    </p>
+                    <ul style="list-style: none;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
+                            <strong style="color: var(--text-white);">Enemy AI to Player Control:</strong> Simple AI-controlled enemies became Controller-managed units with activation ranges (4-6 tiles) and dice-based damage systems (Normal: 6HP/0-3 damage, Flying: 4HP/0-2 damage, Kamikaze: 3HP/1-2 damage)
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
+                            <strong style="color: var(--text-white);">Real-Time to Turn-Based:</strong> Fast movement inputs converted to dice roll movement (Escaper: 2d6, Controller: 1d6) with tactical positioning replacing twitch reflexes
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
+                            <strong style="color: var(--text-white);">Time-Based to Turn-Based Buffs:</strong> Invincibility changed from 5-second duration to 3-turn protection, requiring new balance considerations
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
+                            <strong style="color: var(--text-white);">Level Design to Board Layout:</strong> Multiple digital rooms became modular map tiles (1-4 tiles per game) with Controller-imposed limitations (max 6 traps, 6 enemies, 4 pickups per tile)
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-color);">→</span>
+                            <strong style="color: var(--text-white);">Vertical Movement Loss:</strong> 3D navigation reduced to 2D grid movement, fundamentally changing strategy and pacing
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-dark); border-left: 4px solid var(--accent-color);">
+                <h4 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 1rem;">
+                    Key Design Insights from Playtesting
+                </h4>
+                <div style="color: var(--text-gray); line-height: 1.8;">
+                    <p style="margin-bottom: 1rem;">
+                        Initial playtesting revealed that unlimited Controller power created impossible scenarios. We implemented 
+                        strict limitations on obstacle placement to balance competitive fairness while maintaining strategic depth. 
+                        This taught us valuable lessons about asymmetric game balance and the importance of constraints in 
+                        competitive design.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong style="color: var(--text-white);">Materials Used:</strong> The game utilized everyday objects 
+                        (bottle caps, coins, pen caps, salt/pepper packets) as game pieces, demonstrating resourceful analog 
+                        prototyping. This DIY approach made the game accessible while maintaining clear visual differentiation 
+                        between component types.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong style="color: var(--text-white);">Conclusion:</strong> While we concluded the digital version 
+                        was ultimately more engaging due to its fast-paced action and vertical movement—core features lost in 
+                        translation—the analog adaptation deepened our understanding of fundamental game design principles that 
+                        transcend medium. The exercise revealed how game feel, pacing, and strategic depth fundamentally change 
+                        when shifting from real-time to turn-based systems.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-dark); border-left: 4px solid var(--accent-color);">
-        <h4 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 1rem;">
-            Key Design Insights from Playtesting
-        </h4>
-        <div style="color: var(--text-gray); line-height: 1.8;">
-            <p style="margin-bottom: 1rem;">
-                Initial playtesting revealed that unlimited Controller power created impossible scenarios. We implemented 
-                strict limitations on obstacle placement to balance competitive fairness while maintaining strategic depth. 
-                This taught us valuable lessons about asymmetric game balance and the importance of constraints in 
-                competitive design.
-            </p>
-            <p style="margin-bottom: 1rem;">
-                <strong style="color: var(--text-white);">Materials Used:</strong> The game utilized everyday objects 
-                (bottle caps, coins, pen caps, salt/pepper packets) as game pieces, demonstrating resourceful analog 
-                prototyping. This DIY approach made the game accessible while maintaining clear visual differentiation 
-                between component types.
-            </p>
-            <p style="margin-bottom: 0;">
-                <strong style="color: var(--text-white);">Conclusion:</strong> While we concluded the digital version 
-                was ultimately more engaging due to its fast-paced action and vertical movement—core features lost in 
-                translation—the analog adaptation deepened our understanding of fundamental game design principles that 
-                transcend medium. The exercise revealed how game feel, pacing, and strategic depth fundamentally change 
-                when shifting from real-time to turn-based systems.
-            </p>
-        </div>
-    </div>
-</div>
+
         <div class="content-section">
-    <h2>Playable Builds</h2>
-    <p style="color: var(--text-gray); margin-bottom: 2rem;">
-        Download and play through the evolution of our team's FPS project, from initial prototype to final build. 
-        Also included is our top-down shooter variation showcasing alternative gameplay mechanics within the final build.
-    </p>
-    
-    <div style="display: grid; gap: 2rem; margin-top: 2rem;">
-        
-        <!-- Build 1: Initial FPS -->
-        <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--accent-color);">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <div>
-                    <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
-                        FPS Project - Initial Build
-                    </h3>
-                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
-                        Version 1.0 | Early Prototype
+            <h2>Playable Builds</h2>
+            <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                Download and play through the evolution of our team's FPS project, from initial prototype to final build. 
+                Also included is our top-down shooter variation showcasing alternative gameplay mechanics within the final build.
+            </p>
+            
+            <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+                
+                <!-- Build 1: Initial FPS -->
+                <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--accent-color);">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
+                                FPS Project - Initial Build
+                            </h3>
+                            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
+                                Version 1.0 | Early Prototype
+                            </p>
+                        </div>
+                        <a href="FPS_Initial_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--accent-color); color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                            <span>⬇</span> Download
+                        </a>
+                    </div>
+                    <p style="color: var(--text-gray); line-height: 1.8;">
+                        The initial prototype featuring basic weapon systems, player movement, and core FPS mechanics. 
+                        This build represents our early exploration of Unreal Engine 5's capabilities and establishes 
+                        the foundation for our modular weapon system.
                     </p>
                 </div>
-                <a href="FPS_Initial_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--accent-color); color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
-                    <span>⬇</span> Download
-                </a>
-            </div>
-            <p style="color: var(--text-gray); line-height: 1.8;">
-                The initial prototype featuring basic weapon systems, player movement, and core FPS mechanics. 
-                This build represents our early exploration of Unreal Engine 5's capabilities and establishes 
-                the foundation for our modular weapon system.
-            </p>
-        </div>
-        
-        <!-- Build 3: Final FPS Build -->
-        <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--accent-color);">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <div>
-                    <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
-                        FPS Project - Final Build
-                    </h3>
-                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
-                        Version 3.0 | Polished Release
+                
+                <!-- Build 3: Final FPS Build -->
+                <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--accent-color);">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
+                                FPS Project - Final Build
+                            </h3>
+                            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
+                                Version 3.0 | Polished Release
+                            </p>
+                        </div>
+                        <a href="FPS_Final_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--accent-color); color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                            <span>⬇</span> Download
+                        </a>
+                    </div>
+                    <p style="color: var(--text-gray); line-height: 1.8;">
+                        The complete FPS experience featuring fully implemented modular weapon systems, Niagara VFX 
+                        environmental hazards, polished UI, and optimized performance. This build represents the culmination 
+                        of our team's collaborative effort and agile development process.
                     </p>
                 </div>
-                <a href="FPS_Final_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--accent-color); color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
-                    <span>⬇</span> Download
-                </a>
-            </div>
-            <p style="color: var(--text-gray); line-height: 1.8;">
-                The complete FPS experience featuring fully implemented modular weapon systems, Niagara VFX 
-                environmental hazards, polished UI, and optimized performance. This build represents the culmination 
-                of our team's collaborative effort and agile development process.
-            </p>
-        </div>
-        
-        <!-- Build 4: Top-Down Shooter -->
-        <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #06b6d4;">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <div>
-                    <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
-                        Top-Down Shooter - Final Build
-                    </h3>
-                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
-                        Alternative Perspective | Complete
+                
+                <!-- Build 4: Top-Down Shooter -->
+                <div style="background: var(--background-dark); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #06b6d4;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: var(--text-white); font-size: 1.3rem; margin-bottom: 0.5rem;">
+                                Top-Down Shooter - Final Build
+                            </h3>
+                            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">
+                                Alternative Perspective | Complete
+                            </p>
+                        </div>
+                        <a href="TopDown_Final_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #06b6d4; color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                            <span>⬇</span> Download
+                        </a>
+                    </div>
+                    <p style="color: var(--text-gray); line-height: 1.8;">
+                        A top-down perspective variation showcasing alternative gameplay mechanics and camera systems. 
+                        This build demonstrates our team's versatility in adapting core shooting mechanics to different 
+                        gameplay perspectives while maintaining engaging combat and responsive controls.
                     </p>
                 </div>
-                <a href="TopDown_Final_Build.zip" download style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #06b6d4; color: var(--background-darker); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
-                    <span>⬇</span> Download
-                </a>
+                
             </div>
-            <p style="color: var(--text-gray); line-height: 1.8;">
-                A top-down perspective variation showcasing alternative gameplay mechanics and camera systems. 
-                This build demonstrates our team's versatility in adapting core shooting mechanics to different 
-                gameplay perspectives while maintaining engaging combat and responsive controls.
-            </p>
         </div>
         
-    </div>
-    
         <div class="content-section">
             <h2>My Contributions</h2>
             <ul>
@@ -830,7 +856,7 @@
             </ul>
         </div>
         
-         <div class="content-section">
+        <div class="content-section">
             <h2>Challenges & Solutions</h2>
             
             <div class="challenge-box">
@@ -949,11 +975,6 @@
                 </p>
             </div>
         </div>
-                <p>
-                    As I noted in our comparative analysis, "the amount of new systems I interacted with to create certain effects or the way mechanics work within the game" made this project invaluable for technical growth beyond what any tutorial could provide. Creating a custom Niagara particle system for electricity hazards was "so much fun and very cool to mess around with"—learning how emitters, modules, and parameters combined to create visual effects that communicated danger to players. Learning animation blueprints and blend spaces for multiple animation sets was "extremely interesting," revealing how character movement fluidity comes from carefully blended state machines rather than individual animations. Vincent's work on sliding wall indicators with timeline animations and instance editable references, Seth's implementation of turret AI with adjustable parameters (rate of fire, line-of-sight angles, health values), and my own work on dual-resource UI systems all required diving into Unreal Engine documentation, testing edge cases, iterating on feel, and learning through trial and error. I learned that game development tools like Unreal Engine 5 reward experimentation—the best way to understand complex systems isn't passive learning through videos, but active building with real production constraints, deadlines, and team dependencies. The fact that all five team members agreed this FPS project was significantly better than our previous top-down shooter ("I believe the FPS game we created is better," "the FPS game we made is much better," "our First Person Shooter came out much more completed," "I think the FPS game is better," "our first-person shooter came out more entertaining") suggests our collective technical skills improved dramatically through hands-on collaborative development. This project reinforced that technical mastery comes from repeated practice with real production constraints—working on actual gameplay that players will experience, not isolated tutorial exercises. Every bug fixed, every system integrated, every balance adjustment made me a better designer and developer.
-                </p>
-            </div>
-        </div>
         
         <div class="content-section">
             <h2>Technologies & Tools</h2>
@@ -964,9 +985,15 @@
                 <span class="tag">Perforce</span>
                 <span class="tag">Agile Development</span>
                 <span class="tag">FPS Mechanics</span>
+                <span class="tag">Top-Down Shooter</span>
                 <span class="tag">Weapon Systems</span>
                 <span class="tag">UI Design</span>
                 <span class="tag">Team Collaboration</span>
+                <span class="tag">Game Balance</span>
+                <span class="tag">Playtesting</span>
+                <span class="tag">Audio Implementation</span>
+                <span class="tag">Animation Blueprints</span>
+                <span class="tag">AI Systems</span>
             </div>
         </div>
     </section>
@@ -975,5 +1002,6 @@
         <a href="index.html#work" class="back-btn-large">← Back to All Projects</a>
     </section>
 
-    <footer>
-        <p>&
+  
+</body>
+</html>
