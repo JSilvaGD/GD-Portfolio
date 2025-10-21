@@ -832,37 +832,120 @@
         
         <div class="content-section">
             <h2>Challenges & Solutions</h2>
-            <p>
-                <strong>Challenge:</strong> Designing a weapon system that was both modular and easy for team members to extend.
-            </p>
-            <p>
-                <strong>Solution:</strong> Created a Blueprint-based parent weapon class with configurable parameters 
-                (fire rate, damage, ammo capacity) that allowed designers to create weapon variants without programming 
-                knowledge. This accelerated content creation and empowered the entire team.
-            </p>
-            <p>
-                <strong>Challenge:</strong> Coordinating development across multiple team members working on interconnected systems.
-            </p>
-            <p>
-                <strong>Solution:</strong> Established clear communication protocols through daily standups, used 
-                Perforce for version control, and created comprehensive documentation for all shared systems. 
-                This minimized merge conflicts and kept everyone aligned.
-            </p>
+            
+            <div class="challenge-box">
+                <h3>Challenge 1: Modular Weapon System Design</h3>
+                <p>
+                    <strong>The Problem:</strong> Designing a weapon system that was both modular and easy for team members to extend across both FPS and top-down perspectives without requiring deep programming knowledge.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Created a Blueprint-based parent weapon class (BP_Weapons) with configurable parameters (fire rate, damage, ammo capacity) and invisible box collision detection for pickup interactions. This parent-child architecture allowed designers to create weapon variants (pistol, assault rifle) by simply adjusting exposed variables while maintaining consistent "Press E to pick up weapon" UI feedback. The modular approach proved essential when adapting systems from the top-down shooter to the FPS project, demonstrating the value of reusable asset architecture. Team members could create new weapons in minutes rather than hours, accelerating content creation significantly.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 2: Player Survivability Balance</h3>
+                <p>
+                    <strong>The Problem:</strong> Initial playtests revealed players dying within 1-2 minutes, creating a frustrating experience where they couldn't learn enemy patterns or explore level design. The game felt punishing rather than challenging.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Implemented a comprehensive, data-driven balancing pass based on dev playtesting feedback. In the FPS project, we increased base health from 5 to 30 (600% increase) and shields from 10 to 20 (100% increase), while reducing electricity area damage from 5 to 3 damage per tick (40% reduction). In the top-down shooter, we more than doubled max health (4→8), slowed enemy projectile speed (100→60cm/s for better reaction time), and strategically increased health pickup placement (3→8 pickups distributed across the map). These iterative adjustments extended average gameplay time from 1-1.5 minutes to 5-10 minutes while maintaining challenge. The team learned to use specific numerical data to drive design decisions rather than relying solely on subjective feel.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 3: Player Communication Systems</h3>
+                <p>
+                    <strong>The Problem:</strong> Non-experienced gamers struggled to understand pickup functions, environmental interactions, and game state. Playtester Desiree "wasn't 100% on what each pickup was for" and Rusty "wasn't sure about the invincibility one." Players needed constant verbal guidance to understand mechanics.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Implemented 18+ communication enhancements combining visual, auditory, and tactile feedback. Visual improvements included color-coded UI elements (green health bar matching green pickups, blue shields matching blue pickups), bullet icons replacing text ("Ammo:" text removed), directional indicators on sliding walls, golden arrows for pressure plates, and unique breakable wall textures. Audio cues included weapon firing sounds, collection sounds for all pickups (health, shield, invincibility, ammo), gun collection audio when pressing "E", and environmental audio for moving doors (3.5-second sound cues at world locations). Screen effects provided immediate damage feedback (red flash for health damage, green overlay for healing, blue for shields, invincibility timer overlay). Playtesting with non-gamers after implementation revealed dramatic improvements—Vincent's playtester noted they "much preferred the added sounds and new shapes" and it was "definitely easier for them to tell when things were dangerous." This taught the team that effective game design communicates mechanics through integrated feedback rather than tutorials or text.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 4: Enemy Threat Level Balancing</h3>
+                <p>
+                    <strong>The Problem:</strong> Enemy types didn't create meaningful tactical decisions. Kamikaze enemies at 150cm/s were easily kited and felt "obsolete," while the second FPS section overwhelmed players with too many enemies. Players either ignored certain enemy types or died instantly with no counterplay.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Differentiated enemy types through distinct behaviors and adjusted their parameters based on playtesting feedback. Kamikaze enemy speed increased from 150cm/s to 500cm/s (233% increase), making them immediate priority threats requiring quick decision-making—players had to eliminate them first or risk being overwhelmed. In the FPS project, we implemented three distinct enemy types (normal ranged with short-distance attacks, flying enemies with height-based positioning avoiding ground obstacles, kamikaze with overlap damage) and balanced density by reducing the overwhelming second section by 4 enemies while adding 12 to the previously empty final section. We also added stationary turrets (increased from 1 to 5) with refined 115° line-of-sight after finding the default 180° too punishing and reducing vision range so they couldn't shoot players off-screen. This enemy variety forced players to adapt tactics (prioritize kamikaze, use cover against turrets, manage flying enemies separately) rather than relying on a single kiting strategy.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 5: Checkpoint System Implementation</h3>
+                <p>
+                    <strong>The Problem:</strong> Players experiencing frustration from having to restart lengthy levels after single mistakes deep into gameplay. Playtesting notes identified "no checkpoints, upon death the player starts back at the very beginning of the tutorial" as a critical pain point causing players to quit rather than retry.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Implemented a checkpoint system (developed by Kira & Anthony using reference tutorial: https://www.youtube.com/watch?v=2X0nYIV9L70) using trigger boxes that save player position on overlap and update spawn locations dynamically. Checkpoints were strategically placed between each major section of the FPS level (after tutorial, between combat arenas, before final challenge), transforming the experience from a punishing restart loop to a challenging but fair progression system. This allowed players to experiment with different approaches, learn enemy patterns, and feel comfortable taking risks without fear of losing 10+ minutes of progress. The team learned that respecting player time investment is crucial for maintaining engagement in longer experiences and that modern game design requires forgiveness systems to prevent frustration from overwhelming challenge.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 6: Team Coordination & Version Control</h3>
+                <p>
+                    <strong>The Problem:</strong> Coordinating development across five team members working on interconnected systems (weapons, enemies, UI, environmental mechanics, audio) while maintaining version control and avoiding conflicts. Early development had merge conflicts when multiple people modified shared Blueprints.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Established clear communication protocols through daily standups, used Perforce for version control with branch management, and created comprehensive documentation logs for all shared systems. Each team member maintained primary responsibility for specific mechanics with clear ownership: Joshua (weapons/health systems/Niagara VFX), Anthony (enemies/UI screens/screen effects), Kira (power-ups/checkpoints), Vincent (environmental mechanics/pressure plates/sliding walls), Seth (turrets/breakable walls/audio implementation). Documentation included detailed implementation notes (like "Changed Jump Velocity from 450 cm/s to 475 cm/s"), reference links (Kira's checkpoint tutorial), and balance change logs with numerical justifications. This structure minimized merge conflicts by reducing simultaneous edits to the same files and ensured everyone understood how their systems interfaced with others through written specifications. The team learned that proactive documentation saves exponentially more time than it costs and that clear ownership doesn't mean isolation—collaborative features like the checkpoint system (Kira & Anthony) worked because handoff points were explicitly defined.
+                </p>
+            </div>
+
+            <div class="challenge-box">
+                <h3>Challenge 7: Encouraging Active Player Movement</h3>
+                <p>
+                    <strong>The Problem:</strong> Players adopted passive, static defensive play patterns—sitting at maximum screen distance in the top-down shooter and camping doorways in the FPS. The levels felt like shooting galleries rather than dynamic combat arenas, with players never exploring optional areas or secret rewards.
+                </p>
+                <p>
+                    <strong>The Solution:</strong> Redesigned pickup distribution and power-up duration to incentivize aggressive positioning. In the top-down shooter, increasing health pickups from 3 to 8 (non-respawning across 30 waves) encouraged players to move around the map to collect them rather than hoarding resources and camping. Speed boost pickups were adjusted from 1 pickup with 12-second duration to 3 pickups with 5-second bursts, placed strategically near turrets and health pickups to create risk-reward decisions about when to use them (sprint to grab health under turret fire vs. save for escape). Movement physics were also tuned in the FPS—adjusted jump velocity (450→475cm/s), air control boost (25→100), and falling lateral friction (0→2)—to enable jump puzzles for secret rewards and prevent players from feeling like they were "falling way too fast." These changes transformed both games from static shooting galleries into dynamic movement-focused experiences where positioning became as important as aim, and exploration was rewarded with tangible gameplay advantages.
+                </p>
+            </div>
         </div>
         
         <div class="content-section">
             <h2>What I Learned</h2>
-            <p>
-                This project reinforced the importance of clear communication and documentation in team environments. 
-                Working with programmers and artists taught me how to design systems that are both technically sound 
-                and accessible to non-technical team members.
-            </p>
-            <p>
-                I also gained valuable experience in agile methodologies, learning how to break large features into 
-                manageable tasks, prioritize work effectively, and adapt to changing requirements. The collaborative 
-                nature of this project strengthened my ability to give and receive constructive feedback.
-            </p>
-        </div>
+            
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">The Power of Data-Driven Iterative Design</h3>
+                <p>
+                    This project fundamentally changed how I approach game balance. Rather than relying on intuition or vague descriptions like "the game feels too hard," our team made specific, measurable adjustments based on playtesting data—enemy projectile speeds (100→60cm/s), movement velocities (kamikaze: 150→500cm/s), health values (4→8, 5→30), pickup counts (3→8), damage tick rates (5→3)—and documented the reasoning behind each change. For example, discovering that kamikaze enemies at 150cm/s felt "obsolete" and could be easily kited led to a precise 233% speed increase to 500cm/s, making them immediate priority threats that forced players to change tactics. I learned that concrete numbers enable clear communication within teams ("reduce projectile speed by 40%" vs. "make it slower") and create reproducible, testable results. When someone says "the game feels too hard," the solution isn't guesswork—it's systematic playtesting with measurable outcomes, documented changes, and validation testing. This analytical approach to design, where every balance decision is justified with data and reasoning, will inform every future project I work on. It's the difference between hoping a game feels good and knowing why it feels good.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">Player Communication Through Integrated Feedback Systems</h3>
+                <p>
+                    Working on the 18+ communication enhancements taught me that great game design shows rather than tells—and it does so through multiple sensory channels simultaneously. Before implementing visual/audio/tactile feedback, even experienced gamers struggled to understand pickup functions ("wasn't 100% on what each pickup was for") and environmental interactions. After adding color-coded UI elements (green health matching green pickups), collection sounds (unique audio for health, shield, invincibility, ammo), screen effects (red damage flash, green/blue healing overlays, invincibility timer), and environmental indicators (golden pressure plate arrows, directional wall indicators), playtesting with non-gamers revealed they could navigate complex systems without any tutorial or explanation. The most striking insight came from Vincent's playtest with Desiree, who initially struggled but later "much preferred the added sounds and new shapes" that made dangerous elements immediately obvious through integrated multi-sensory feedback. I learned that effective feedback systems work at multiple levels simultaneously: visual changes confirm actions happened, audio cues provide spatial awareness and state changes, and screen effects communicate critical information (you're taking damage! you're healing! you're invincible!). This holistic approach to player communication—where every interaction is reinforced through sight, sound, and feel—will be foundational in all my future design work. Players shouldn't need to read tutorials; the game itself should teach through play.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">Designing for Reusability and Adaptation</h3>
+                <p>
+                    The progression from top-down shooter to FPS project demonstrated the immense value of modular, reusable systems designed with future adaptation in mind. As Anthony noted in our comparative analysis, "the extra time we had from not creating certain assets/mechanics from scratch" allowed us to "spend more time on the level and balancing of the FPS game," resulting in a significantly more polished final product. Creating flexible Blueprint parent classes with instance-editable variables meant weapon systems (BP_Weapons with configurable fire rate/damage/ammo), enemy behaviors (normal/flying/kamikaze with adjustable speeds and health), and UI elements (health/shield bars) could be quickly adapted between projects rather than rebuilt from scratch. I learned to think beyond immediate implementation—asking "could this system work from a different perspective?" or "what if we need to add new weapon types later?"—and designing with those future possibilities in mind. This forward-thinking approach isn't just efficient; it's essential for iterative development where you're constantly building on previous work. The analog "Call of Board" adaptation further reinforced this lesson in an extreme way, showing how understanding core mechanics (not just their technical implementation) enables translation across entirely different mediums—from real-time digital to turn-based tabletop. The fundamental design question became: "What is the essential experience we're creating, and how can different systems deliver that experience?" This shift from implementation-first to experience-first thinking has permanently changed how I approach design challenges.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">The Importance of Playtesting with Diverse Player Skill Levels</h3>
+                <p>
+                    Our documentation reveals a critical insight that has fundamentally shaped my approach to player-focused design: playtesting must include both experienced gamers and complete novices to reveal the full spectrum of player experience. Seth's friend Jacob, an experienced FPS player who had "been playing games since we were kids," breezed through the game and noted he could "bypass a few areas almost completely by just running through and jumping around," recommending we "reduce the power of the double jump or reduce the speed of the player to add difficulty." Meanwhile, Kira's husband Rusty, a less experienced gamer, "struggled with the handle of PC game controls" and found "the jumping bit after the tutorial quite frustrating"—the exact opposite problem. These contrasting experiences taught me that a single difficulty curve can't satisfy everyone, but good communication systems (visual indicators, audio cues, forgiving checkpoints) help bridge the skill gap by making core mechanics understandable regardless of gaming literacy. I learned to design for accessibility first—making sure even novice players can understand what's happening through clear feedback—then add optional challenges (jump puzzles for secret rewards, speed-run potential, skill-based shortcuts) for experienced players to discover. The team's unanimous agreement that the FPS was better than the top-down shooter came partly from better player immersion and communication enhancements, not just improved mechanics. This human-centered design approach—testing with real people who represent different segments of your target audience and documenting specific feedback quotes rather than generalizations—is now a non-negotiable part of my development process. Games are made for players, not developers, and you can't know what players need until you watch them play.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">Collaborative Development and Clear Ownership</h3>
+                <p>
+                    Working in a five-person team across multiple interconnected systems taught me that clear ownership prevents chaos while enabling collaboration—but only when combined with comprehensive documentation and communication protocols. Each team member had primary responsibility for specific mechanics, documented in our logs with explicit attribution: Joshua (weapon systems, health/shield UI, Niagara VFX, double jump), Anthony (enemy AI types, UI screens, screen effects, death/win conditions), Kira (power-ups including invincibility/health, checkpoint system, spike hazards), Vincent (environmental mechanics, pressure plates with arrows, sliding walls with indicators, sound cues), and Seth (turrets with adjustable AI, breakable walls with unique textures, audio implementation). This structure didn't mean working in isolation—the checkpoint system was explicitly noted as "Kira & Anthony," showing collaborative execution—but it established who owned final decisions for each system and who other team members should consult when their work intersected. I learned that comprehensive documentation, including specific numerical changes and reasoning ("Changed Enemy Projectile Speed from 100cm/s to 60cm/s. When playtesting when multiple ranged enemies would spawn in per wave the projectile speed was too fast for the player to react at times"), enables asynchronous collaboration where team members can understand decisions made when they weren't present and build upon them confidently. The communication logs also showed how playtesting feedback directly informed development priorities in a transparent, traceable way. This disciplined approach to team development—combining clear ownership with thorough documentation, regular standups, version control discipline (Perforce), and systematic feedback integration—will be essential for any future collaborative projects. The difference between teams that ship and teams that struggle often comes down to these unsexy organizational practices, not just individual technical skill.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">Technical Growth Through Hands-On Implementation</h3>
+                <p>
+                    As I noted in our comparative analysis, "the amount of new systems I interacted with to create certain effects or the way mechanics work within the game" made this project invaluable for technical growth beyond what any tutorial could provide. Creating a custom Niagara particle system for electricity hazards was "so much fun and very cool to mess around with"—learning how emitters, modules, and parameters combined to create visual effects that communicated danger to players. Learning animation blueprints and blend spaces for multiple animation sets was "extremely interesting," revealing how character movement fluidity comes from carefully blended state machines rather than individual animations. Vincent's work on sliding wall indicators with timeline animations and instance editable references, Seth's implementation of turret AI with adjustable parameters (rate of fire, line-of
         
         <div class="content-section">
             <h2>Technologies & Tools</h2>
