@@ -134,108 +134,91 @@
         /* Projects Grid Section */
         .projects-section {
             padding: 4rem 3rem 6rem;
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 2rem;
+            font-size: 3rem;
             margin-bottom: 4rem;
+            text-align: center;
+            font-weight: 800;
         }
         
-        .project-tile {
-            background: var(--background-dark);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .project-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 8rem;
+            padding: 2rem 0;
         }
         
-        .project-tile:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-color);
+        .project-row:nth-child(even) .project-content {
+            order: 2;
+        }
+        
+        .project-row:nth-child(even) .project-image-container {
+            order: 1;
+        }
+        
+        .project-image-container {
+            width: 100%;
         }
         
         .project-image {
             width: 100%;
-            height: 300px;
+            height: 500px;
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: rgba(255, 255, 255, 0.1);
-            font-weight: 900;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
         }
         
-        .project-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(255, 107, 53, 0.1) 0%, 
-                rgba(255, 107, 53, 0) 50%);
+        .project-image:hover {
+            transform: scale(1.02);
         }
         
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         
         .project-content {
             padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
         
-        .project-header {
-            margin-bottom: 0.75rem;
+        .project-number {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
         }
         
         .project-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
         
         .project-role {
             color: var(--accent-color);
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
         }
         
         .project-meta {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
         
         .meta-item {
@@ -244,38 +227,57 @@
         }
         
         .meta-label {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             margin-bottom: 0.25rem;
         }
         
         .meta-value {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--text-gray);
         }
         
         .project-description {
             color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
         }
         
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
         }
         
         .tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.4rem 0.9rem;
-            font-size: 0.75rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
             color: var(--text-gray);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .view-project-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+        
+        .view-project-btn:hover {
+            background: var(--accent-color);
+            color: var(--background-darker);
         }
         
         /* Skills Section */
@@ -415,13 +417,19 @@
                 padding: 3rem 1.5rem;
             }
             
-            .projects-grid {
+            .project-row {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
+                margin-bottom: 4rem;
             }
             
-            .project-meta {
-                grid-template-columns: 1fr;
+            .project-row:nth-child(even) .project-content,
+            .project-row:nth-child(even) .project-image-container {
+                order: initial;
+            }
+            
+            .project-image {
+                height: 300px;
             }
         }
         
@@ -457,7 +465,178 @@
     <section id="work" class="projects-section">
         <h2 class="section-title">Featured Work</h2>
         
-        <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-row">
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img src="shadowborne-featured.jpg" alt="Shadowborne">
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-number">01</div>
+                <h3 class="project-title">Shadowborne</h3>
+                <p class="project-role">Gameplay Designer/Programmer & QA Lead</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unreal Engine 5.3</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team Size</span>
+                        <span class="meta-value">3 Members</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value">Oct 2024 - Feb 2025</span>
+                    </div>
+                </div>
+                
+                <p class="project-description">
+                    Advanced gameplay design showcasing responsive UI/UX systems, precision combat mechanics, 
+                    and adaptive AI. Led QA documentation through complete development cycle.
+                </p>
+                
+                <div class="project-tags">
+                    <span class="tag">Gameplay Design</span>
+                    <span class="tag">QA Testing</span>
+                    <span class="tag">Level Design</span>
+                    <span class="tag">Combat Systems</span>
+                </div>
+                
+                <a href="shadowborne.html" class="view-project-btn">View Project</a>
+            </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-row">
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img src="fps-3.jpg" alt="FPS Project">
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-number">02</div>
+                <h3 class="project-title">FPS Project</h3>
+                <p class="project-role">Gameplay/Mechanic Designer</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unreal Engine 5.1</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team Size</span>
+                        <span class="meta-value">4-5 Members</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value">Apr 2024 - May 2024</span>
+                    </div>
+                </div>
+                
+                <p class="project-description">
+                    Multi-phase collaborative project featuring FPS mechanics, top-down shooter adaptation, 
+                    and analog board game conversion showcasing versatility across different formats.
+                </p>
+                
+                <div class="project-tags">
+                    <span class="tag">FPS Mechanics</span>
+                    <span class="tag">Weapon Systems</span>
+                    <span class="tag">Agile Dev</span>
+                    <span class="tag">VFX</span>
+                </div>
+                
+                <a href="fps-project.html" class="view-project-btn">View Project</a>
+            </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-row">
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img src="adventure-final-3.png" alt="Adventure Level Design">
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-number">03</div>
+                <h3 class="project-title">Adventure Level Design</h3>
+                <p class="project-role">Level Designer/Gameplay Programmer</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unreal Engine 5.1</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team Size</span>
+                        <span class="meta-value">4-5 Members</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value">Sep 2023 - Oct 2023</span>
+                    </div>
+                </div>
+                
+                <p class="project-description">
+                    Indiana Jones-inspired adventure level with puzzle systems, environmental storytelling, 
+                    and intuitive navigation through landmarks and leading lines.
+                </p>
+                
+                <div class="project-tags">
+                    <span class="tag">Level Design</span>
+                    <span class="tag">Puzzles</span>
+                    <span class="tag">Asset Integration</span>
+                    <span class="tag">Perforce</span>
+                </div>
+                
+                <a href="adventure.html" class="view-project-btn">View Project</a>
+            </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-row">
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img src="stackobot-featured.jpg" alt="Stack O Bot">
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-number">04</div>
+                <h3 class="project-title">Stack O Bot</h3>
+                <p class="project-role">Mechanic Designer/Programmer</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unreal Engine 5.1</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team Size</span>
+                        <span class="meta-value">Solo Project</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value">2023</span>
+                    </div>
+                </div>
+                
+                <p class="project-description">
+                    Defensive shield system with UI integration and hazardous environmental mechanics 
+                    demonstrating resource management and technical implementation.
+                </p>
+                
+                <div class="project-tags">
+                    <span class="tag">Mechanics</span>
+                    <span class="tag">Blueprint</span>
+                    <span class="tag">UI Systems</span>
+                    <span class="tag">Resource Management</span>
+                </div>
+                
+                <a href="stackobot.html" class="view-project-btn">View Project</a>
+            </div>
+        </div>
+    </section>
             
             <a href="shadowborne.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
@@ -473,11 +652,11 @@
                     <div class="project-meta">
                         <div class="meta-item">
                             <span class="meta-label">Engine</span>
-                            <span class="meta-value">Unreal Engine 5.3</span>
+                            <span class="meta-value">Unreal Engine 5</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Team Size</span>
-                            <span class="meta-value">3 Members</span>
+                            <span class="meta-value">Solo Project</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Timeline</span>
@@ -504,18 +683,18 @@
 
             <a href="fps-project.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    <img src="fps-3.jpg" alt="FPS Project">
+                    <img src="fps-featured.png" alt="FPS Project">
                 </div>
                 <div class="project-content">
                     <div class="project-header">
-                        <h3 class="project-title">FPS project transitioned to other game genres</h3>
+                        <h3 class="project-title">FPS/Top Down Shooter/Call of Board</h3>
                         <p class="project-role">Gameplay/Mechanic Designer</p>
                     </div>
                     
                     <div class="project-meta">
                         <div class="meta-item">
                             <span class="meta-label">Engine</span>
-                            <span class="meta-value">Unreal Engine 5.1</span>
+                            <span class="meta-value">Unreal Engine 5</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Team Size</span>
@@ -527,7 +706,7 @@
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Role</span>
-                            <span class="meta-value">Gameplay/Mechanic Designer</span>
+                            <span class="meta-value">Gameplay Designer</span>
                         </div>
                     </div>
                     
@@ -546,7 +725,7 @@
 
             <a href="adventure.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    <img src="adventure-final-3.png" alt="Adventure Level Design">
+                    <img src="adventure-featured.jpg" alt="Adventure Level Design">
                 </div>
                 <div class="project-content">
                     <div class="project-header">
@@ -557,11 +736,11 @@
                     <div class="project-meta">
                         <div class="meta-item">
                             <span class="meta-label">Engine</span>
-                            <span class="meta-value">Unreal Engine 5.1</span>
+                            <span class="meta-value">Unreal Engine 5</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Team Size</span>
-                            <span class="meta-value">4-5 Members</span>
+                            <span class="meta-value">Team Project</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Timeline</span>
@@ -599,7 +778,7 @@
                     <div class="project-meta">
                         <div class="meta-item">
                             <span class="meta-label">Engine</span>
-                            <span class="meta-value">Unreal Engine 5.1</span>
+                            <span class="meta-value">Unreal Engine</span>
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Team Size</span>
@@ -611,7 +790,7 @@
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Role</span>
-                            <span class="meta-value">Mechanic Designer/Programmer</span>
+                            <span class="meta-value">Mechanic Designer</span>
                         </div>
                     </div>
                     
@@ -624,6 +803,48 @@
                         <span class="tag">Blueprint</span>
                         <span class="tag">UI Systems</span>
                         <span class="tag">Resource Management</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="spaceship.html" class="project-tile" style="text-decoration: none; color: inherit;">
+                <div class="project-image">
+                    <img src="spaceship-featured.jpg" alt="Spaceship Design Tools">
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Spaceship Design Tools</h3>
+                        <p class="project-role">Designer</p>
+                    </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Engine</span>
+                            <span class="meta-value">Unreal Engine 5</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team Size</span>
+                            <span class="meta-value">Solo Project</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Designer</span>
+                        </div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Technical exercise exploring Unreal Engine 5 design tools, efficient asset pipelines, 
+                        and lighting/material systems implementation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">UE5 Tools</span>
+                        <span class="tag">Asset Pipeline</span>
+                        <span class="tag">Materials</span>
+                        <span class="tag">Lighting</span>
                     </div>
                 </div>
             </a>
@@ -641,6 +862,7 @@
                     <ul>
                         <li>Unreal Engine 5</li>
                         <li>Blueprint Visual Scripting</li>
+                        <li>Unity</li>
                         <li>C++</li>
                     </ul>
                 </div>
@@ -693,6 +915,8 @@
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2025 Joshua Silva. All rights reserved.</p>
     </footer>
 
     <script>
