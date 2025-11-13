@@ -159,10 +159,12 @@
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .project-tile:hover {
             transform: translateY(-8px);
+            border-color: var(--accent-color);
         }
         
         .project-image {
@@ -208,15 +210,13 @@
         }
         
         .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
             margin-bottom: 0.75rem;
         }
         
         .project-title {
             font-size: 1.8rem;
             font-weight: 700;
+            margin-bottom: 0.5rem;
         }
         
         .project-role {
@@ -225,6 +225,35 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        
+        .meta-value {
+            font-size: 0.85rem;
+            color: var(--text-gray);
         }
         
         .project-description {
@@ -303,102 +332,6 @@
         .contact-section {
             padding: 6rem 3rem;
             text-align: center;
-        }
-        
-        /* About Section */
-        .about-section {
-            padding: 6rem 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.1);
-            font-size: 3rem;
-            font-weight: 900;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .about-role {
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        .about-text {
-            color: var(--text-gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-highlights {
-            margin-top: 2rem;
-        }
-        
-        .about-highlights h3 {
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .about-highlights ul {
-            list-style: none;
-        }
-        
-        .about-highlights li {
-            color: var(--text-gray);
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .about-highlights li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-        
-        @media (max-width: 768px) {
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
         }
         
         .contact-content {
@@ -486,6 +419,10 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+            
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
         }
         
         html {
@@ -497,7 +434,7 @@
     <nav>
         <div class="logo">JOSHUA SILVA</div>
         <ul>
-            <li><a href="#about">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -517,44 +454,6 @@
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="joshua-photo.jpg" alt="Joshua Silva">
-            </div>
-            
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p class="about-role">Technical Game Designer</p>
-                <p class="about-text">
-                    I'm a passionate Technical Game Designer with a Bachelor's degree in Game Design 
-                    from Full Sail University. Currently working as a Gameplay Programmer Intern at T'sarE LLC, 
-                    I specialize in Unreal Engine 5, Blueprint scripting, and C++ development.
-                </p>
-                <p class="about-text">
-                    My approach combines creative design thinking with technical implementation skills, 
-                    allowing me to bridge the gap between vision and reality. I'm driven by the challenge 
-                    of creating immersive player experiences through innovative gameplay systems, responsive 
-                    mechanics, and thoughtful level design.
-                </p>
-                <p class="about-text">
-                    When I'm not designing levels or prototyping mechanics, I'm playtesting games, studying 
-                    player psychology, and exploring new technologies in the game development space.
-                </p>
-                <div class="about-highlights">
-                    <h3>Quick Facts</h3>
-                    <ul>
-                        <li> Based in Houston, Texas</li>
-                        <li> B.S. in Game Design - Full Sail University (2025)</li>
-                        <li> Gameplay Programmer Intern at T'sarE LLC</li>
-                        <li> Specializing in UE5, Blueprint, and C++</li>
-                        <li> Completed multiple team-based game projects</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="work" class="projects-section">
         <h2 class="section-title">Featured Work</h2>
         
@@ -562,13 +461,34 @@
             
             <a href="shadowborne.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    01
+                    <img src="shadowborne-featured.jpg" alt="Shadowborne">
+                    <!-- If no image, remove img tag and it will show "01" -->
                 </div>
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">Shadowborne</h3>
-                        <span class="project-role">Capstone</span>
+                        <p class="project-role">Gameplay Designer/Programmer & QA Lead</p>
                     </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Engine</span>
+                            <span class="meta-value">Unreal Engine 5</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team Size</span>
+                            <span class="meta-value">Solo Project</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">Oct 2024 - Feb 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Designer/Programmer/QA</span>
+                        </div>
+                    </div>
+                    
                     <p class="project-description">
                         Advanced gameplay design showcasing responsive UI/UX systems, precision combat mechanics, 
                         and adaptive AI. Led QA documentation through complete development cycle.
@@ -584,18 +504,36 @@
 
             <a href="fps-project.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    02
+                    <img src="fps-featured.png" alt="FPS Project">
                 </div>
                 <div class="project-content">
                     <div class="project-header">
-                        <h3 class="project-title">FPS/Top Down Shooter/Call of Board Analog Team Projects</h3>
-                        <span class="project-role">Gameplay Designer</span>
+                        <h3 class="project-title">FPS/Top Down Shooter/Call of Board</h3>
+                        <p class="project-role">Gameplay/Mechanic Designer</p>
                     </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Engine</span>
+                            <span class="meta-value">Unreal Engine 5</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team Size</span>
+                            <span class="meta-value">4-5 Members</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">Apr 2024 - May 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Gameplay Designer</span>
+                        </div>
+                    </div>
+                    
                     <p class="project-description">
-                        Collaborative first-person shooter featuring modular weapon systems and dual-resource UI. 
-                        Integrated environmental hazards using Niagara VFX system. 
-                        Collaborative Top Down Shooter drawing inspiration from Hotline Miami.
-                        Collaborative transition of the FPS project into an analog board game with documentation
+                        Multi-phase collaborative project featuring FPS mechanics, top-down shooter adaptation, 
+                        and analog board game conversion showcasing versatility across different formats.
                     </p>
                     <div class="project-tags">
                         <span class="tag">FPS Mechanics</span>
@@ -608,13 +546,33 @@
 
             <a href="adventure.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    03
+                    <img src="adventure-featured.jpg" alt="Adventure Level Design">
                 </div>
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">Adventure Level Design</h3>
-                        <span class="project-role">Level Designer</span>
+                        <p class="project-role">Level Designer/Gameplay Programmer</p>
                     </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Engine</span>
+                            <span class="meta-value">Unreal Engine 5</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team Size</span>
+                            <span class="meta-value">Team Project</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">Sep 2023 - Oct 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Level Designer</span>
+                        </div>
+                    </div>
+                    
                     <p class="project-description">
                         Indiana Jones-inspired adventure level with puzzle systems, environmental storytelling, 
                         and intuitive navigation through landmarks and leading lines.
@@ -630,44 +588,42 @@
 
             <a href="stackobot.html" class="project-tile" style="text-decoration: none; color: inherit;">
                 <div class="project-image">
-                    04
+                    <img src="stackobot-featured.jpg" alt="Stack O Bot">
                 </div>
                 <div class="project-content">
                     <div class="project-header">
                         <h3 class="project-title">Stack O Bot</h3>
-                        <span class="project-role">Mechanic Designer</span>
+                        <p class="project-role">Mechanic Designer/Programmer</p>
                     </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Engine</span>
+                            <span class="meta-value">Unreal Engine</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Team Size</span>
+                            <span class="meta-value">Solo Project</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Mechanic Designer</span>
+                        </div>
+                    </div>
+                    
                     <p class="project-description">
-                        Mechanic-focused project exploring physics-based interactions and refined control schemes 
-                        through rapid prototyping and iterative playtesting.
+                        Defensive shield system with UI integration and hazardous environmental mechanics 
+                        demonstrating resource management and technical implementation.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Mechanics</span>
                         <span class="tag">Blueprint</span>
-                        <span class="tag">Prototyping</span>
-                        <span class="tag">Physics</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="spaceship.html" class="project-tile" style="text-decoration: none; color: inherit;">
-                <div class="project-image">
-                    05
-                </div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3 class="project-title">Spaceship Design Tools</h3>
-                        <span class="project-role">Designer</span>
-                    </div>
-                    <p class="project-description">
-                        Technical exercise exploring Unreal Engine 5 design tools, efficient asset pipelines, 
-                        and lighting/material systems implementation.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">UE5 Tools</span>
-                        <span class="tag">Asset Pipeline</span>
-                        <span class="tag">Materials</span>
-                        <span class="tag">Lighting</span>
+                        <span class="tag">UI Systems</span>
+                        <span class="tag">Resource Management</span>
                     </div>
                 </div>
             </a>
@@ -685,7 +641,6 @@
                     <ul>
                         <li>Unreal Engine 5</li>
                         <li>Blueprint Visual Scripting</li>
-                        <li>Unity</li>
                         <li>C++</li>
                     </ul>
                 </div>
@@ -738,7 +693,6 @@
         </div>
     </section>
 
-    <footer>
     </footer>
 
     <script>
