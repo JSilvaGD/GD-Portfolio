@@ -339,7 +339,6 @@
         
         <div class="featured-image">
             FEATURED IMAGE
-            <img src="stackobot-featured.jpg" alt="Stack O Bot"> -->
             <!-- TO ADD IMAGE: <img src="images/stackobot-featured.jpg" alt="Stack O Bot"> -->
         </div>
     </section>
@@ -349,23 +348,13 @@
         <div class="content-section">
             <h2>Project Overview</h2>
             <p>
-                Stack O Bot challenged me to design and implement two original gameplay mechanics within Unreal Engine's 
-                existing framework. I chose to create a defensive shield system with UI integration and a hazardous 
-                environmental area that interacted dynamically with the shield mechanic, creating layered resource 
-                management gameplay.
+                Stack O Bot challenged me to design and implement two original gameplay mechanics within Unreal Engine. I created a defensive shield system with UI integration and hazardous environmental areas that interacted dynamically with the shield, creating strategic resource management gameplay.
             </p>
             <p>
-                The first mechanic introduced a defensive shield pickup that activated a shield resource bar in the 
-                player UI, along with refillable shield pickups scattered throughout the level. The second mechanic 
-                featured a damageable traversal area where players with active shields would deplete shield resources 
-                before taking health damage, encouraging strategic resource management. Additionally, I implemented 
-                variable movement speed controlled through mouse wheel inputs, allowing players to dynamically adjust 
-                their traversal speed between slow precision movement and faster navigation.
+                The shield mechanic featured pickups that activated a resource bar in the player UI, with refillable pickups scattered throughout the level. Environmental hazard zones depleted shields before damaging health, encouraging players to manage resources strategically. I also implemented variable movement speed controlled via mouse wheel, allowing dynamic adjustment between precision movement and faster navigation.
             </p>
             <p>
-                As a solo developer working within time constraints, I was responsible for all design decisions, 
-                Blueprint implementation, UI integration, and iterative balancing. This project emphasized rapid 
-                prototyping and scope management while maintaining cohesive mechanical interactions.
+                As a solo developer, I handled all design decisions, Blueprint implementation, UI integration, and iterative balancing. This project emphasized rapid prototyping, scope management, and creating cohesive mechanical interactions under time constraints.
             </p>
         </div>
         
@@ -431,42 +420,42 @@
             <h2>Challenges & Solutions</h2>
             
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Shield Visual Attachment to Character Skeleton</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Shield Visual Attachment</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">The Problem:</strong> Attaching the shield visual element to the correct character bone within Unreal Engine's skeletal mesh system proved technically challenging. Initial attempts using simple component attachment resulted in the shield floating incorrectly relative to the character, not following animations properly, and displaying visual clipping through the character mesh during movement. The skeletal hierarchy contained dozens of bones, and identifying the correct attachment point required understanding bone naming conventions and skeletal structure. Additionally, the shield needed to maintain proper orientation and scale regardless of character animation state.
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "The shield looks weird floating around the character and clips through their body when they move."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Researched Unreal Engine's skeletal mesh component attachment system and implemented socket-based attachment using Blueprint's "Attach Component to Component" node with specific attachment rules. I navigated the character's skeletal hierarchy through the Skeleton Editor to identify the optimal bone (spine or chest bone) that provided stable positioning across all animation states. Created a custom socket on the chosen bone with precise location, rotation, and scale offsets to position the shield naturally. Used "Snap to Target" attachment rules with "Keep World" transform options to ensure the shield maintained correct positioning during character movement and animation blending. Tested attachment across various animation states (idle, walking, running, jumping) to verify consistent visual placement and adjusted socket transform values iteratively until achieving natural-looking shield positioning that moved organically with character motion.
+                    <strong style="color: var(--text-white);">The Solution:</strong> I implemented socket-based attachment to the character's skeletal mesh using Unreal's Skeleton Editor. After identifying the optimal attachment bone (chest/spine), I created a custom socket with precise transform offsets and used "Snap to Target" attachment rules to ensure the shield moved naturally with all character animations. This resulted in visually seamless shield positioning that felt integrated with the character rig.
                 </p>
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Dual-Damage System Blueprint Logic</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Damage System Logic</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">The Problem:</strong> Implementing correct Blueprint logic for the dual-damage system where environmental hazards prioritize shield damage before health damage required complex conditional branching and state management. The system needed to handle multiple edge cases: what happens when shield is partially depleted and incoming damage exceeds remaining shield capacity? How to ensure damage overflow properly transfers to health without double-applying or losing damage values? How to maintain accurate UI updates reflecting both shield and health changes in real-time? Initial implementations either failed to transfer overflow damage correctly, updated UI inconsistently, or created situations where players could take health damage while shields remained active.
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I'm taking health damage even though I still have shield left" and "My shield bar shows I have protection but I'm losing health."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Designed a comprehensive Blueprint function that handled all damage calculation logic in a single, testable system. Implemented branching logic using "Branch" nodes to first check shield status: if shield exists and is greater than zero, calculate remaining shield after damage, then use another branch to determine if damage exceeded shield capacity. If damage overflow occurred, calculated exact overflow amount (incoming damage minus remaining shield value), set shield to zero, then applied overflow damage to health. Used local variables within the function to store intermediate calculation values (remaining shield, overflow damage) preventing data loss between execution steps. Integrated "Set" nodes to update both shield and health values atomically, ensuring UI widgets bound to these variables reflected changes immediately. Added Blueprint validation using "Print String" debugging to verify damage calculations at each step during development, confirming accurate damage distribution across both resource types. Tested extensively with varying damage values, shield capacities, and health amounts to ensure robust behavior across all possible gameplay scenarios.
+                    <strong style="color: var(--text-white);">The Solution:</strong> I designed a comprehensive Blueprint function with conditional branching to properly handle damage overflow. The system first checks shield status, calculates remaining shield after damage, then determines if overflow damage exists. Using local variables to track intermediate values, the function ensures shield depletes first and only applies overflow damage to health once shields reach zero. This eliminated all edge cases where health damage occurred prematurely while maintaining accurate real-time UI updates.
                 </p>
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Project Scope Management Under Time Constraints</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Feature Scope Management</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">The Problem:</strong> Managing project scope within tight time constraints while maintaining the original vision for complex interconnected mechanics became a critical challenge early in development. Initial design documentation outlined five ambitious mechanics including the shield system, multiple environmental hazard types, power-up variations, enemy AI interactions, and complex level progression systems. Midway through the project timeline, it became evident that implementing all planned features to a polished, bug-free state was unrealistic given available time. Continuing with the original scope risked delivering multiple half-finished, poorly-integrated systems rather than cohesive, fully-functional mechanics. Additionally, the interconnected nature of planned features meant incomplete systems would negatively impact the functionality of dependent mechanics.
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "The game has lots of ideas but nothing feels fully finished" and "Some mechanics seem half-baked or buggy."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Conducted honest assessment of development progress and remaining time, then prioritized features based on core gameplay value and mechanical cohesion. Reduced scope to focus on two fully-realized, polished mechanics—the defensive shield system with UI integration and the damageable environmental area—that naturally complemented each other and created meaningful resource management gameplay loop. This strategic reduction allowed deeper iteration on core systems rather than surface-level implementation of many features. Documented cut features and original design intentions for potential future expansion, treating this as a learning experience in realistic production planning. Allocated saved development time toward playtesting and balance refinement, resulting in two mechanics that felt responsive, well-integrated, and thoroughly tested. This experience taught valuable lessons about feature prioritization, honest progress assessment, and the importance of delivering polished, complete systems over ambitious but unfinished features—lessons that have informed all subsequent project planning and have made me a more realistic and effective designer.
+                    <strong style="color: var(--text-white);">The Solution:</strong> I conducted an honest assessment of development progress and made the difficult decision to reduce scope from five ambitious mechanics to two fully-realized systems. Focusing exclusively on the shield system and environmental hazards allowed me to deeply iterate on core interactions, resulting in polished, thoroughly tested mechanics that worked cohesively together. This taught me that delivering complete, bug-free systems creates better player experiences than numerous half-finished features—a lesson that has shaped all my subsequent project planning.
                 </p>
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: Shield Depletion Rate Balancing</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: Shield Balance</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">The Problem:</strong> Balancing shield depletion rates to create meaningful resource management without frustrating players required careful tuning of multiple interconnected variables. Initial damage tick rates depleted shields too quickly, making hazardous areas feel punishing rather than strategic. Players abandoned shield pickups entirely, preferring to avoid hazard zones rather than engage with the resource management system. Conversely, when damage rates were reduced too much, shields became overpowered safety nets that removed all tension from traversing dangerous areas. Finding the balance between meaningful consequence and player agency proved elusive through theoretical design alone.
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "My shield drains way too fast—it feels pointless to pick one up" and later, "Shields last forever now, there's no challenge anymore."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Conducted systematic iterative playtesting sessions where I methodically adjusted damage tick rates, tick intervals, shield capacity values, and environmental hazard sizes based on observed player behavior and feedback. Started with instance-editable variables in Blueprint for all balance-related values (damage per tick, tick frequency, shield max capacity, pickup restoration amount), allowing rapid iteration without Blueprint recompilation. Created test scenarios with varying hazard lengths and shield availability to observe how different value combinations affected player decision-making and risk assessment. Implemented comprehensive visual feedback—shield bar color changes indicating depletion severity, audio cues at specific depletion thresholds (75%, 50%, 25%), and particle effects when shields absorbed damage—to clearly communicate resource state. Added subtle screen edge vignette effects when shields were critically low, creating tension without obscuring gameplay. Through testing, discovered optimal balance emerged when hazard traversal consumed approximately 60-70% of full shield capacity, creating meaningful resource cost without guaranteeing failure, encouraging players to seek refills while not making mistakes immediately fatal. This balance maintained player agency while preserving strategic depth, teaching me that effective balancing requires observable player behavior data rather than purely theoretical number adjustment.
+                    <strong style="color: var(--text-white);">The Solution:</strong> I implemented instance-editable Blueprint variables for all balance parameters, enabling rapid iteration during playtesting sessions. Through systematic testing of different damage rates, tick intervals, and shield capacities, I discovered the optimal balance: hazard traversal consuming 60-70% of shield capacity. This created meaningful resource cost without guaranteeing failure. I supplemented the numerical balance with comprehensive feedback systems—color-coded UI, audio cues at depletion thresholds, and particle effects—ensuring players always understood their resource state. This experience reinforced that effective balance requires observable player behavior data, not just theoretical number adjustments.
                 </p>
             </div>
         </div>
@@ -474,36 +463,16 @@
         <div class="content-section">
             <h2>What I Learned</h2>
             <p>
-                This project reinforced the importance of scope management and realistic production planning. My initial 
-                ambition exceeded available development time, teaching me to prioritize feature completion over feature 
-                quantity. Delivering two fully-functional, polished mechanics proved more valuable than multiple 
-                half-finished systems. This lesson has fundamentally shaped how I approach project planning—I now build 
-                realistic timelines with buffer for iteration and polish rather than optimistic schedules packed with 
-                aspirational features.
+                This project taught me that delivering two polished, fully-functional mechanics creates better player experiences than multiple half-finished systems. I now prioritize feature completion over quantity and build realistic timelines with buffer for iteration rather than optimistic schedules packed with aspirational features.
             </p>
             <p>
-                Working with Unreal Engine's skeletal mesh system deepened my technical understanding of character rigging, 
-                bone hierarchies, and component attachment workflows. Solving the shield attachment challenge required diving 
-                into engine documentation, experimenting with different attachment methods (direct bone attachment vs. socket-based 
-                attachment), and understanding transform inheritance through skeletal hierarchies. This technical problem-solving 
-                experience strengthened my ability to research unfamiliar engine systems independently and troubleshoot complex 
-                technical implementation issues—skills that transfer directly to professional development environments.
+                Working with Unreal's skeletal mesh system strengthened my ability to research unfamiliar engine systems independently and troubleshoot complex technical issues—skills that transfer directly to professional development. I learned to dive into documentation, experiment with different implementation approaches, and iterate until finding optimal solutions.
             </p>
             <p>
-                Implementing interconnected mechanics—where the shield system directly influenced how environmental hazards 
-                affected the player—taught me about creating cohesive mechanical loops and emergent gameplay. I learned that 
-                truly engaging mechanics emerge from systems that interact meaningfully rather than existing in isolation. The 
-                relationship between shield pickups, hazardous areas, and resource management created strategic depth that 
-                wouldn't exist with standalone features. Players naturally developed risk-assessment skills evaluating whether 
-                current shield capacity justified traversing hazards or if seeking refills first was more optimal.
+                Implementing interconnected mechanics showed me that engaging gameplay emerges from systems that interact meaningfully rather than exist in isolation. The relationship between shield pickups, hazardous areas, and resource management created strategic depth and emergent decision-making that standalone features couldn't achieve.
             </p>
             <p>
-                This project also emphasized the value of clear visual communication and feedback systems. Players needed immediate 
-                understanding of shield status, damage sources, and resource availability without overwhelming UI or excessive 
-                visual noise. Designing UI elements and feedback systems that communicated complex state information clearly—through 
-                color-coded shield bars, audio cues at depletion thresholds, and particle effects during damage absorption—became 
-                a critical design consideration that has informed all my subsequent work. I learned that technical implementation 
-                means nothing if players can't intuitively understand system states and make informed decisions.
+                Finally, designing clear feedback systems—color-coded UI, audio cues, and particle effects—reinforced that technical implementation means nothing if players can't intuitively understand system states. Players need immediate comprehension of game mechanics to make informed decisions, making visual communication as critical as the underlying code.
             </p>
         </div>
         
@@ -532,7 +501,6 @@
     <section class="back-to-portfolio">
         <a href="index.html#work" class="back-btn-large">← Back to All Projects</a>
     </section>
-
 
 </body>
 </html>
