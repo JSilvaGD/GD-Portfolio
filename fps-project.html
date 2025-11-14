@@ -322,23 +322,22 @@
         <div class="content-section">
             <h2>Project Overview</h2>
             <p>
-                A collaborative multi-phase project built in Unreal Engine 5, showcasing versatility across different gameplay perspectives and mediums. This comprehensive project included three distinct deliverables: a first-person shooter, a top-down shooter adaptation, and an analog board game conversion, all demonstrating agile development practices and modular system design.
+                A multi-phase collaborative project demonstrating versatility across digital and analog game formats. Built in Unreal Engine 5, the project progressed from a top-down shooter prototype to a refined first-person shooter, culminating in an analog board game adaptation that required translating real-time combat into strategic turn-based gameplay.
             </p>
             <p>
-                Working in an agile team environment, I focused on creating flexible weapon systems and dual-resource UI mechanics that could adapt across both digital shooter perspectives. The FPS emphasized responsive combat and environmental navigation, while the top-down variation required adjustments to camera systems, player feedback, and spatial awareness. The final phase challenged us to translate our digital FPS into a turn-based analog board game, requiring fundamental rethinking of real-time mechanics into strategic tabletop gameplay.
+                I designed modular weapon systems and dual-resource UI mechanics that adapted across both digital perspectives, then fundamentally reimagined these systems for tabletop play, converting AI behaviors into dice-based mechanics and real-time movement into tactical positioning.
             </p>
         </div>
         
         <div class="content-section">
             <h2>My Contributions</h2>
             <ul>
-                <li>Collaborated in agile team to design and develop first-person shooter experience in Unreal Engine 5</li>
                 <li>Programmed modular weapon system with interchangeable components for flexible combat options</li>
                 <li>Designed and implemented dual-resource UI system providing real-time combat feedback</li>
-                <li>Integrated Niagara-based environmental hazards to increase level interactivity and player engagement</li>
-                <li>Participated in daily standups and sprint planning to maintain project momentum</li>
-                <li>Conducted peer code reviews and provided constructive feedback to team members</li>
-                <li>Documented weapon system architecture for future team reference and iteration</li>
+                <li>Integrated Niagara-based environmental hazards to increase level interactivity</li>
+                <li>Translated digital FPS mechanics into turn-based analog board game systems</li>
+                <li>Conducted peer code reviews and documented system architecture for team reference</li>
+                <li>Participated in daily standups and sprint planning using agile development practices</li>
             </ul>
         </div>
         
@@ -346,52 +345,32 @@
             <h2>Challenges & Solutions</h2>
             
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Modular Weapon System</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Accessible Weapon Design</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We need weapons that non-programmers can create and modify easily."
+                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We need weapons that non-programmers can create easily."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Created a Blueprint-based parent weapon class with configurable parameters including fire rate, damage, and ammo capacity. This parent-child architecture allowed designers to create weapon variants by adjusting exposed variables while maintaining consistent interaction feedback. Team members could create new weapons efficiently, significantly accelerating content creation and proving essential when adapting systems between projects.
+                    <strong style="color: var(--text-white);">The Solution:</strong> Created Blueprint parent-child architecture with exposed parameters (fire rate, damage, ammo), enabling designers to create weapon variants without programming knowledge. This accelerated content creation and proved essential when adapting systems between projects.
                 </p>
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Player Survivability</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Player Survivability Balance</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I keep dying in the first minute before I can learn anything" and "The game feels too punishing."
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I keep dying before I can learn anything."
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented comprehensive balancing adjustments based on playtesting data. In the FPS, I increased base health from 5 to 30 and shields from 10 to 20, while reducing environmental damage from 5 to 3 per tick. In the top-down shooter, I doubled max health from 4 to 8, reduced enemy projectile speed from 100cm/s to 60cm/s, and increased health pickups from 3 to 8. These adjustments extended average gameplay time from 1-1.5 minutes to 5-10 minutes while maintaining challenge.
+                    <strong style="color: var(--text-white);">The Solution:</strong> Used data-driven balancing: increased FPS health (5→30) and shields (10→20), reduced environmental damage (5→3), doubled top-down health (4→8), slowed enemy projectiles (100→60cm/s), and expanded pickups (3→8). Extended gameplay from 1-1.5 minutes to 5-10 minutes while maintaining challenge.
                 </p>
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Player Communication</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Digital-to-Analog Translation</h3>
                 <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I don't know what these pickups do" and "How do I know if something is dangerous?"
+                    <strong style="color: var(--text-white);">Team Feedback:</strong> "How do we convert real-time combat into turn-based gameplay?"
                 </p>
                 <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented 18+ communication enhancements combining visual, auditory, and screen feedback. Visual improvements included color-coded UI matching pickups, bullet icons replacing text, directional indicators on interactive elements, and unique textures for breakable objects. Audio cues included weapon sounds, collection feedback, and environmental audio. Screen effects provided immediate damage and healing feedback. Post-implementation playtesting revealed players navigated complex systems independently without verbal guidance.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: Digital-to-Analog Translation</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Team Feedback:</strong> "How do we convert real-time combat into turn-based gameplay?" and "The analog version feels impossible to balance."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Fundamentally rethought core systems rather than directly translating mechanics. AI-controlled enemies became Controller-managed units with activation ranges (4-6 tiles) and dice-based damage systems. Fast movement inputs converted to dice roll movement (Escaper: 2d6, Controller: 1d6), replacing twitch reflexes with tactical positioning. Time-based buffs like invincibility changed from 5-second duration to 3-turn protection. Multiple digital rooms became modular map tiles (1-4 tiles per game) with strict Controller limitations (max 6 traps, 6 enemies, 4 pickups per tile) to prevent impossible scenarios. Initial playtesting revealed unlimited Controller power created unfair situations, teaching us valuable lessons about asymmetric game balance and the importance of constraints in competitive design.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 5: Team Coordination</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We're running into version control conflicts" and "I'm not sure who's working on what."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Established clear communication protocols through daily coordination, used Perforce for version control, and created comprehensive documentation for all shared systems. Each team member maintained primary responsibility for specific mechanics with clear ownership. Documentation included detailed implementation notes and balance justifications. This structure minimized conflicts and ensured team understanding of system interfaces.
+                    <strong style="color: var(--text-white);">The Solution:</strong> Fundamentally reimagined core systems: AI enemies became dice-based player-controlled units with activation ranges, real-time movement converted to tactical dice rolls (Escaper: 2d6, Controller: 1d6), time-based buffs became turn-based durations, and 3D levels became modular board tiles. Implemented strict Controller limitations (max 6 traps, 6 enemies, 4 pickups) after playtesting revealed unlimited power created impossible scenarios, teaching valuable lessons about asymmetric balance and competitive constraints.
                 </p>
             </div>
         </div>
@@ -399,19 +378,16 @@
         <div class="content-section">
             <h2>What I Learned</h2>
             <p>
-                This project transformed my approach to game balance through data-driven iterative design. Rather than relying on subjective impressions, our team made specific, measurable adjustments based on playtesting—enemy speeds, health values, pickup counts—with documented reasoning. For example, discovering kamikaze enemies at 150cm/s were easily avoided led to increasing them to 500cm/s, making them immediate threats. This analytical approach will inform all future projects.
+                Data-driven iteration transformed my design approach. Making measurable adjustments—like increasing kamikaze speed from 150cm/s to 500cm/s based on playtesting—proved more effective than subjective tuning. This analytical methodology now informs all my balancing decisions.
             </p>
             <p>
-                Working on 18+ communication enhancements demonstrated that effective design communicates through multiple sensory channels simultaneously. The most significant insight came from observing how layered feedback—visual confirmation, audio spatial awareness, and screen state communication—worked together to create understanding without explicit instruction. Players should learn through play, not tutorials.
+                Implementing 18+ communication enhancements taught me that effective design requires layered feedback across visual, auditory, and tactile channels. Players navigated complex systems independently when feedback reinforced understanding through multiple senses simultaneously.
             </p>
             <p>
-                The progression from top-down shooter to FPS demonstrated the value of modular, reusable systems. Creating flexible parent classes with adjustable variables meant weapon systems, enemy behaviors, and UI elements could be adapted between projects rather than rebuilt. This shift from implementation-first to experience-first thinking has permanently influenced how I approach design challenges.
+                The analog adaptation revealed that core design principles transcend medium. While digital excelled through immediate feedback and spatial navigation, analog required strategic planning and constraint-based design. Converting every system—AI to dice mechanics, movement to tactical positioning, time-based to turn-based—fundamentally changed how I evaluate what makes mechanics engaging in their specific medium.
             </p>
             <p>
-                The analog adaptation revealed how fundamental game design principles transcend medium. While we concluded the digital version was ultimately more engaging due to fast-paced action and vertical movement—core features lost in translation—the exercise deepened my understanding of pacing, strategic depth, and player agency. Converting real-time combat into turn-based gameplay required rethinking every system: AI became player-controlled units with dice mechanics, movement became tactical positioning, and time-based buffs became turn-based durations. The biggest lesson was understanding what makes a game engaging in its medium—the digital version succeeded through immediate feedback and spatial navigation, while the analog version required strategic planning and constraint-based design. This cross-medium perspective has fundamentally changed how I evaluate core game mechanics.
-            </p>
-            <p>
-                Working in a five-person team demonstrated that clear ownership prevents chaos when combined with comprehensive documentation and communication protocols. Each team member maintained primary responsibility for specific mechanics. This disciplined approach—combining clear ownership with thorough documentation, regular coordination, and version control—will be essential for future collaborative projects.
+                Creating modular parent-child systems proved essential for cross-project adaptation. Flexible architecture meant weapon systems, enemy behaviors, and UI elements transferred between perspectives rather than requiring rebuilds, shifting my approach from implementation-first to experience-first thinking.
             </p>
         </div>
         
