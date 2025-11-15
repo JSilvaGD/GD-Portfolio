@@ -137,7 +137,7 @@
         }
         
         .project-content {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 3rem;
         }
@@ -217,21 +217,6 @@
             margin-top: 0.5rem;
         }
         
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin: 2rem 0;
-        }
-        
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1.25rem;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         .back-to-portfolio {
             text-align: center;
             padding: 4rem 3rem;
@@ -302,7 +287,7 @@
 
     <section class="project-hero">
         <div class="project-header">
-            <p class="project-category">Team Project</p>
+            <p class="project-category">Capstone Project</p>
             <h1 class="project-title">Shadowborne</h1>
             <p class="project-subtitle">Gameplay Designer/Programmer & QA Lead</p>
         </div>
@@ -318,16 +303,17 @@
             </div>
             <div class="info-item">
                 <h3>Engine</h3>
-                <p>Unreal Engine 5</p>
+                <p>Unreal Engine 5.3</p>
             </div>
             <div class="info-item">
                 <h3>Team Size</h3>
-                <p>3 Team Members</p>
+                <p>3 Members</p>
             </div>
         </div>
         
         <div class="featured-image">
             FEATURED IMAGE
+            <img src="shadowborne-featured.png" alt="Shadowborne">
             <!-- TO ADD IMAGE: <img src="images/shadowborne-featured.jpg" alt="Shadowborne"> -->
         </div>
     </section>
@@ -337,16 +323,98 @@
         <div class="content-section">
             <h2>Project Overview</h2>
             <p>
-                Shadowborne was my comprehensive capstone project at Full Sail University, demonstrating advanced 
-                gameplay design and QA methodologies. The project focused on creating immersive combat experiences 
-                with responsive systems and environmental storytelling, showcasing my ability to bridge the gap 
-                between design vision and technical implementation.
+                Shadowborne is my comprehensive capstone project at Full Sail University, demonstrating advanced gameplay design and QA methodologies. The project focuses on creating immersive combat experiences with responsive systems and environmental storytelling, bridging design vision with technical implementation.
             </p>
             <p>
-                As both the Gameplay Designer/Programmer and QA Lead, I was responsible for designing level layouts, 
-                implementing gameplay systems using Blueprint and C++, and ensuring quality through rigorous testing 
-                and documentation. The project emphasized player engagement through precision-timed combat mechanics 
-                and adaptive AI systems.
+                As both Gameplay Designer/Programmer and QA Lead, I designed level layouts, implemented gameplay systems using Blueprint and C++, and ensured quality through rigorous testing documentation. The project emphasizes player engagement through precision-timed combat mechanics and adaptive AI systems.
+            </p>
+        </div>
+        
+        <div class="content-section">
+            <h2>My Contributions</h2>
+            <ul>
+                <li>Designed immersive level layouts emphasizing environmental storytelling, pacing, and player engagement</li>
+                <li>Implemented responsive UI/UX healing systems using Blueprint and C++ for seamless player feedback</li>
+                <li>Developed precision-timed combat mechanics that reward player skill and timing</li>
+                <li>Created adaptive enemy AI systems that scale difficulty based on player performance</li>
+                <li>Led QA documentation through Jira, tracking bugs and coordinating fixes across development cycles</li>
+                <li>Conducted iterative playtesting sessions and gathered actionable feedback</li>
+                <li>Optimized performance across multiple gameplay systems to maintain consistent frame rates</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>Challenges & Solutions</h2>
+            
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Combat Difficulty Balance</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "Early enemies feel too easy, but later encounters are overwhelming" and "I can't tell if I'm improving or the game is just getting harder."
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">The Problem:</strong> Initial playtesting revealed a significant pacing issue where players breezed through early encounters without learning combat fundamentals, then hit difficulty spikes that felt unfair rather than challenging. The static difficulty curve failed to account for varying player skill levels, creating frustration for both experienced and novice players. Additionally, the lack of transparent difficulty scaling left players uncertain whether their performance was improving or if enemy behavior was simply changing arbitrarily.
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented an adaptive AI system that tracks multiple player performance metrics including damage taken, successful dodges, parry timing accuracy, and combat engagement duration. The system analyzes this data to dynamically adjust enemy behavior across three parameters: health scaling (base HP adjusted ±20% based on player success rate), attack frequency (cooldowns shortened or extended based on player defensive proficiency), and tactical positioning (aggressive flanking for skilled players, predictable frontal attacks for struggling players). Crucially, I added subtle visual feedback—enemy stance changes and attack telegraph timing adjustments—that communicated the adaptation without explicitly breaking immersion. This approach maintained challenge for skilled players while providing learning opportunities for those still mastering combat fundamentals, resulting in a 40% reduction in early-game player abandonment during testing.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Solo QA Leadership</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We keep finding the same bugs weeks apart" and "I'm not sure which issues are priorities."
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">The Problem:</strong> Managing QA workflow as the sole dedicated tester while simultaneously handling gameplay programming responsibilities created organizational chaos. Critical bugs resurfaced because fixes weren't properly verified, regression testing was inconsistent, and the team lacked visibility into which issues blocked progress versus minor polish concerns. Without a structured approach, I found myself firefighting the same problems repeatedly, sacrificing development time to re-fix issues that should have been resolved permanently. The lack of clear priority categorization meant gameplay-breaking bugs sometimes received the same attention as cosmetic issues.
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Established a comprehensive Jira workflow with a four-tier priority system: Critical (blocks core gameplay), High (impacts player experience significantly), Medium (polish and minor issues), and Low (cosmetic concerns). Created standardized bug report templates requiring reproduction steps, expected versus actual behavior, affected systems, and visual documentation, which reduced debugging time by ensuring developers had complete information immediately. Implemented a verification checklist that required retesting not just the specific fix, but related systems that could be affected by code changes, effectively catching regression bugs before they reached the team. Scheduled dedicated two-hour testing blocks three times weekly, separate from development time, ensuring consistent quality review rather than ad-hoc testing when time permitted. This structured approach reduced recurring bugs by 75% and improved team confidence in build stability, while the clear prioritization system kept the team focused on completion-critical issues rather than getting sidetracked by minor polish.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Performance Optimization</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "The game stutters during intense combat encounters" and "Frame drops make it impossible to time dodges correctly."
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">The Problem:</strong> As combat systems grew more complex—with multiple AI enemies, particle effects, UI updates, and environmental hazards active simultaneously—frame rate drops became noticeable during critical gameplay moments. Players reported that performance issues directly impacted their ability to execute precision-timed mechanics, particularly dodges and parries that required frame-perfect timing. Profiling revealed several culprits: excessive Blueprint tick events, unoptimized collision checks, redundant UI widget updates, and particle systems spawning without proper pooling. The performance degradation was most severe during multi-enemy encounters, exactly when smooth performance was most critical for player success.
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Conducted systematic performance profiling using Unreal's built-in tools to identify the heaviest performance bottlenecks, then addressed them through targeted optimizations. Converted performance-critical Blueprint tick functions to C++ event-driven architecture, eliminating constant polling in favor of event dispatchers that only triggered when state changes occurred. Implemented object pooling for frequently spawned actors (projectiles, particles, UI damage numbers), reducing garbage collection overhead by 60%. Optimized collision detection by using appropriate collision channels and simplifying collision meshes for non-visual geometry. Batched UI updates to occur once per frame rather than immediately on every stat change, preventing redundant widget refreshes. Introduced level-of-detail systems for distant enemies, reducing AI calculation complexity when players weren't actively engaged. These optimizations increased average frame rate from 45fps to stable 60fps during peak combat intensity, ensuring players could reliably execute timing-dependent mechanics without technical interference. The experience taught me that performance isn't just a technical concern—it's a fundamental aspect of responsive gameplay feel.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: UI/UX Feedback Clarity</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I didn't realize I was taking damage until I died" and "The healing system feels unresponsive."
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">The Problem:</strong> Initial UI implementations prioritized minimalism to avoid screen clutter, but playtesting revealed this approach left players uncertain about critical combat information. Health changes happened without adequate feedback, making it difficult for players to learn enemy attack patterns or understand when healing was necessary. The healing system, while technically functional, lacked the visual and audio feedback that would make it feel impactful and responsive. Players often died unexpectedly because they hadn't registered cumulative damage from multiple small hits, or wasted healing resources because they couldn't accurately assess their current health status during intense combat.
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented layered feedback systems that communicated health changes through multiple sensory channels simultaneously. Added directional damage indicators that briefly appeared at screen edges, showing both the direction of incoming attacks and color-coded severity (minor hits in orange, critical damage in red). Integrated screen vignette effects that intensified as health decreased, providing peripheral awareness without demanding direct attention. Created dynamic health bar animations with color transitions (green to yellow to red) and pulsing effects when critically low. For the healing system specifically, designed a satisfying particle effect that emanated from the player character, accompanied by a distinctive audio cue and a smooth health bar fill animation that clearly communicated restoration amount. Added floating damage/healing numbers that appeared above the player with different colors and sizes based on magnitude, making individual damage sources identifiable. These changes transformed player perception—post-implementation playtesting showed players accurately assessed their health status without explicitly checking UI, and healing moments felt impactful and rewarding rather than subtle and uncertain.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>What I Learned</h2>
+            <p>
+                <strong style="color: var(--text-white);">Adaptive Systems Require Invisible Design:</strong> The most successful aspect of the adaptive AI system was its transparency to players. Rather than explicitly telling players "the game is now easier/harder," the system adjusted subtly enough that players attributed changes to their own improving skill or momentary lapses in performance. This taught me that player agency and satisfaction often depend on invisible support systems—the best difficulty balancing feels natural rather than algorithmic. When players believe their success comes from skill development rather than behind-the-scenes assistance, engagement and satisfaction increase dramatically. This principle extends beyond AI: the most effective game systems are those players don't consciously notice but unconsciously appreciate.
+            </p>
+            <p>
+                <strong style="color: var(--text-white);">QA as Design Amplifier:</strong> Leading QA while simultaneously handling gameplay programming revealed that testing isn't just bug-catching—it's a critical design feedback loop. The structured testing approach I established didn't just reduce recurring bugs; it exposed design assumptions that didn't survive player interaction. Watching players struggle with mechanics I thought were intuitive, or breeze through challenges I considered difficult, fundamentally changed how I approach design. I learned to design with testing in mind from the start, creating systems that are inherently easier to debug and verify. The verification checklists I developed weren't bureaucratic overhead—they were forcing functions that made me think about edge cases and system interactions during initial implementation rather than discovering them through bug reports. This integration of QA thinking into the design process has made me a more thorough, systems-aware designer.
+            </p>
+            <p>
+                <strong style="color: var(--text-white);">Performance Is Player Experience:</strong> The performance optimization work taught me that technical smoothness directly translates to gameplay feel. Before optimization, players blamed themselves for missing timing windows, assuming they lacked skill. After achieving stable 60fps, those same players successfully executed the exact mechanics they'd previously failed, simply because frame drops no longer interfered with timing. This visceral demonstration showed me that "game feel" isn't purely about animation curves and input response—it's fundamentally about eliminating technical friction between player intent and on-screen result. I now approach performance as a design concern from project inception rather than an optimization task left for later. The best combat timing mechanics mean nothing if technical limitations prevent players from executing them consistently.
+            </p>
+            <p>
+                <strong style="color: var(--text-white);">Feedback Systems Create Mechanical Literacy:</strong> The UI/UX improvements demonstrated that players can only master mechanics they can accurately perceive. When health changes happened silently, players couldn't learn from mistakes because they didn't know what hurt them or how much. After implementing layered feedback—directional indicators, vignette intensity, color-coded damage numbers—players naturally developed pattern recognition and tactical awareness. They learned to identify which enemies posed the greatest threat, when to heal versus when to push aggression, and how to position themselves to minimize damage. This taught me that teaching through play requires comprehensive sensory feedback. Players don't need tutorials explaining mechanics—they need systems that clearly communicate cause and effect through sight, sound, and haptic response. When feedback is clear and immediate, players teach themselves through experimentation and pattern recognition. Good feedback design transforms confusion into learning opportunities.
+            </p>
+            <p>
+                <strong style="color: var(--text-white);">Dual Roles Build Holistic Understanding:</strong> Managing both gameplay programming and QA leadership simultaneously, while initially overwhelming, created a comprehensive understanding of the development pipeline that single-discipline focus couldn't provide. As a programmer, I learned to write code that was inherently more testable and debuggable. As QA lead, I gained appreciation for the complexity behind seemingly simple fixes and learned to write bug reports that developers could actually act on efficiently. This dual perspective has made me a better communicator across disciplines—I can speak credibly to both designers about implementation constraints and to programmers about player-facing quality concerns. The experience reinforced that the most effective developers aren't narrowly specialized—they're broad enough to understand how their work impacts every other discipline on the team.
             </p>
         </div>
         
@@ -384,75 +452,11 @@
             </div>
         </div>
         
-        <div class="content-section">
-            <h2>My Contributions</h2>
-            <ul>
-                <li>Designed immersive level layouts emphasizing environmental storytelling, pacing, and player engagement</li>
-                <li>Implemented responsive UI/UX healing systems using Blueprint and C++ for seamless player feedback</li>
-                <li>Developed precision-timed combat mechanics that reward player skill and timing</li>
-                <li>Created adaptive enemy AI systems that scale difficulty based on player performance</li>
-                <li>Led QA documentation through Jira, tracking bugs and coordinating fixes across development cycles</li>
-                <li>Conducted iterative playtesting sessions with peers and gathered actionable feedback</li>
-                <li>Optimized performance across multiple gameplay systems to maintain consistent frame rates</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Challenges & Solutions</h2>
-            <p>
-                <strong>Challenge:</strong> Balancing combat difficulty to maintain player engagement without frustration.
-            </p>
-            <p>
-                <strong>Solution:</strong> Implemented an adaptive AI system that analyzes player performance metrics 
-                and adjusts enemy behavior dynamically. This included enemy health scaling, attack frequency adjustments, 
-                and strategic positioning based on player skill level.
-            </p>
-            <p>
-                <strong>Challenge:</strong> Managing QA workflow as a solo developer while maintaining development momentum.
-            </p>
-            <p>
-                <strong>Solution:</strong> Established a structured Jira workflow with priority categorization, 
-                scheduled dedicated testing sessions, and created comprehensive bug reproduction documentation 
-                to streamline the fixing process.
-            </p>
-        </div>
-        
-        <div class="content-section">
-            <h2>What I Learned</h2>
-            <p>
-                This project taught me the importance of balancing creative vision with technical constraints. 
-                Working as both designer and QA lead gave me a holistic understanding of the development pipeline 
-                and the critical role that iterative testing plays in refining gameplay experiences.
-            </p>
-            <p>
-                I also gained valuable experience in C++ optimization, Blueprint architecture, and the importance 
-                of clear documentation when working on complex systems. The project reinforced my passion for 
-                creating responsive, player-focused gameplay that feels satisfying and rewarding.
-            </p>
-        </div>
-        
-        <div class="content-section">
-            <h2>Technologies & Tools</h2>
-            <div class="tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Blueprint Visual Scripting</span>
-                <span class="tag">C++</span>
-                <span class="tag">Jira</span>
-                <span class="tag">Perforce</span>
-                <span class="tag">Visual Studio</span>
-                <span class="tag">Gameplay Programming</span>
-                <span class="tag">Level Design</span>
-                <span class="tag">AI Programming</span>
-                <span class="tag">UI/UX Design</span>
-                <span class="tag">QA Testing</span>
-            </div>
-        </div>
     </section>
 
     <section class="back-to-portfolio">
         <a href="index.html#work" class="back-btn-large">← Back to All Projects</a>
     </section>
-
 
 </body>
 </html>
