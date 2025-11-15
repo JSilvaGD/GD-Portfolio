@@ -74,73 +74,55 @@
             color: var(--accent-color);
         }
         
-        /* Hero Section */
+        /* Hero Section - Compact Header */
         .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 6rem 3rem 2rem;
             text-align: center;
-            padding: 8rem 2rem 4rem;
+            background: var(--background-darker);
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             line-height: 1.1;
         }
         
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text-gray);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
         
         .hero-role {
             color: var(--accent-color);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
         
         .hero-description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-gray);
-            line-height: 1.8;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--accent-color);
-            color: var(--background-darker);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .cta-btn:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         /* Projects Grid Section */
         .projects-section {
-            padding: 4rem 3rem 6rem;
+            padding: 3rem 3rem 6rem;
             max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-title {
-            font-size: 3rem;
-            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             text-align: center;
             font-weight: 800;
         }
@@ -476,12 +458,16 @@
                 gap: 1.5rem;
             }
             
+            .hero {
+                padding: 5rem 1.5rem 1.5rem;
+            }
+            
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2rem;
             }
             
             .projects-section {
-                padding: 3rem 1.5rem;
+                padding: 2rem 1.5rem;
             }
             
             .project-row {
@@ -529,7 +515,6 @@
                 Creating immersive gameplay experiences through innovative systems design, 
                 rapid prototyping, and technical implementation.
             </p>
-            <a href="#work" class="cta-btn">View Projects</a>
         </div>
     </section>
 
@@ -588,7 +573,7 @@
             </div>
             <div class="project-content">
                 <div class="project-number">02</div>
-                <h3 class="project-title">FPS Project converted to two other game genres</h3>
+                <h3 class="project-title">FPS Project</h3>
                 <p class="project-role">Gameplay/Mechanic Designer</p>
                 
                 <div class="project-meta">
@@ -741,6 +726,7 @@
                             <span class="skill-tag">Unreal Engine 5</span>
                             <span class="skill-tag">Blueprint Visual Scripting</span>
                             <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Unity</span>
                             <span class="skill-tag">3DS Max</span>
                             <span class="skill-tag">Visual Studio</span>
                         </div>
