@@ -161,8 +161,8 @@
         }
 
         .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
             margin-bottom: 4rem;
         }
@@ -370,10 +370,6 @@
                 padding: 2rem 1.5rem;
             }
             
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .project-row {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -428,7 +424,35 @@
         </aside>
 
         <!-- Main Content -->
-            <h2 class="section-title">Featured Projects</h2>
+        <main class="main-content">
+            <!-- Featured Projects Section -->
+            <section class="featured-projects">
+                <div class="featured-title">Featured Projects</div>
+                <div class="featured-grid">
+                    <div class="featured-card" onclick="window.location.href='shadowborne.html'">
+                        <h3>Shadowborne</h3>
+                        <div class="featured-role">Technical Game Designer</div>
+                        <p>Advanced gameplay with responsive UI/UX, precision combat, and adaptive AI systems.</p>
+                    </div>
+                    <div class="featured-card" onclick="window.location.href='fps-project.html'">
+                        <h3>FPS Project</h3>
+                        <div class="featured-role">Technical Game Designer</div>
+                        <p>Multi-phase collaborative project showcasing FPS mechanics and versatility.</p>
+                    </div>
+                    <div class="featured-card" onclick="window.location.href='adventure.html'">
+                        <h3>Adventure Level</h3>
+                        <div class="featured-role">Technical Game Designer</div>
+                        <p>Indiana Jones-inspired level with puzzle systems and environmental storytelling.</p>
+                    </div>
+                    <div class="featured-card" onclick="window.location.href='stackobot.html'">
+                        <h3>Stack O Bot</h3>
+                        <div class="featured-role">Technical Game Designer</div>
+                        <p>Defensive shield system demonstrating resource management and UI integration.</p>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="section-title">Detailed Case Studies</h2>
             
             <!-- Project 1 -->
             <div class="project-row">
@@ -480,7 +504,7 @@
                     </div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Genre Bending Project</h3>
+                    <h3 class="project-title">FPS Project</h3>
                     <p class="project-role">Technical Game Designer</p>
                     
                     <div class="project-meta">
