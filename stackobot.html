@@ -347,15 +347,15 @@
         <div class="content-section">
             <h2>My Contributions</h2>
             <ul>
-                <li>Designed and implemented defensive shield pickup mechanic using Blueprint visual scripting with custom collision detection and player overlap events</li>
+                <li>Optimized Blueprint event execution using custom events and event dispatchers to maintain performance during continuous damage calculations</li>
+                <li>Created modular Blueprint architecture allowing easy adjustment of damage values, shield capacity, and movement speed parameters without code restructuring</li>
+                <li>Balanced shield depletion rates, damage tick intervals, and pickup values through data-driven iterative playtesting sessions</li>
                 <li>Created dynamic shield resource UI system using UMG widgets that conditionally appears when shield is activated and updates in real-time</li>
                 <li>Developed refillable shield pickup system with instance-editable variables for resource values and respawn timers</li>
                 <li>Programmed damageable environmental area using trigger boxes with tick-based damage events and dual-damage logic (shield priority, then health overflow)</li>
+                <li>Designed and implemented defensive shield pickup mechanic using Blueprint visual scripting with custom collision detection and player overlap events</li>
                 <li>Implemented variable movement speed system using mouse wheel axis inputs bound to character movement component with clamped speed ranges</li>
                 <li>Integrated shield visual mesh attachment to character skeletal system using socket-based component attachment with proper bone hierarchy navigation</li>
-                <li>Balanced shield depletion rates, damage tick intervals, and pickup values through data-driven iterative playtesting sessions</li>
-                <li>Optimized Blueprint event execution using custom events and event dispatchers to maintain performance during continuous damage calculations</li>
-                <li>Created modular Blueprint architecture allowing easy adjustment of damage values, shield capacity, and movement speed parameters without code restructuring</li>
             </ul>
         </div>
         
@@ -363,22 +363,22 @@
             <h2>Challenges & Solutions</h2>
             
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Shield Visual Attachment</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Shield Balance</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "My shield drains way too fast—it feels pointless to pick one up" and later, "Shields last forever now, there's no challenge anymore."
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> I implemented instance-editable Blueprint variables for all balance parameters, enabling rapid iteration during playtesting sessions. Through systematic testing of different damage rates, tick intervals, and shield capacities, I discovered the optimal balance: hazard traversal consuming 60-70% of shield capacity. This created meaningful resource cost without guaranteeing failure. I supplemented the numerical balance with comprehensive feedback systems—color-coded UI, audio cues at depletion thresholds, and particle effects—ensuring players always understood their resource state. This experience reinforced that effective balance requires observable player behavior data, not just theoretical number adjustments.
+                </p>
+            </div>
+
+                            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Shield Visual Attachment</h3>
                 <p style="margin-bottom: 1rem;">
                     <strong style="color: var(--text-white);">Player Feedback:</strong> "The shield looks weird floating around the character and clips through their body when they move."
                 </p>
                 <p>
                     <strong style="color: var(--text-white);">The Solution:</strong> I implemented socket-based attachment to the character's skeletal mesh using Unreal's Skeleton Editor. After identifying the optimal attachment bone (chest/spine), I created a custom socket with precise transform offsets and used "Snap to Target" attachment rules to ensure the shield moved naturally with all character animations. This resulted in visually seamless shield positioning that felt integrated with the character rig.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Damage System Logic</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Player Feedback:</strong> "I'm taking health damage even though I still have shield left" and "My shield bar shows I have protection but I'm losing health."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> I designed a comprehensive Blueprint function with conditional branching to properly handle damage overflow. The system first checks shield status, calculates remaining shield after damage, then determines if overflow damage exists. Using local variables to track intermediate values, the function ensures shield depletes first and only applies overflow damage to health once shields reach zero. This eliminated all edge cases where health damage occurred prematurely while maintaining accurate real-time UI updates.
                 </p>
             </div>
 
@@ -389,16 +389,6 @@
                 </p>
                 <p>
                     <strong style="color: var(--text-white);">The Solution:</strong> I conducted an honest assessment of development progress and made the difficult decision to reduce scope from five ambitious mechanics to two fully-realized systems. Focusing exclusively on the shield system and environmental hazards allowed me to deeply iterate on core interactions, resulting in polished, thoroughly tested mechanics that worked cohesively together. This taught me that delivering complete, bug-free systems creates better player experiences than numerous half-finished features—a lesson that has shaped all my subsequent project planning.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: Shield Balance</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Player Feedback:</strong> "My shield drains way too fast—it feels pointless to pick one up" and later, "Shields last forever now, there's no challenge anymore."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> I implemented instance-editable Blueprint variables for all balance parameters, enabling rapid iteration during playtesting sessions. Through systematic testing of different damage rates, tick intervals, and shield capacities, I discovered the optimal balance: hazard traversal consuming 60-70% of shield capacity. This created meaningful resource cost without guaranteeing failure. I supplemented the numerical balance with comprehensive feedback systems—color-coded UI, audio cues at depletion thresholds, and particle effects—ensuring players always understood their resource state. This experience reinforced that effective balance requires observable player behavior data, not just theoretical number adjustments.
                 </p>
             </div>
         </div>
