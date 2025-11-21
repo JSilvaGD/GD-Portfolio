@@ -100,6 +100,41 @@
         .nav-contact a:hover {
             color: var(--accent-color);
         }
+
+        .nav-skills {
+            margin-top: 1.5rem;
+        }
+
+        .nav-skills-title {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .nav-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 450px;
+        }
+
+        .nav-skill-tag {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            transition: all 0.3s;
+        }
+
+        .nav-skill-tag:hover {
+            background: rgba(255, 107, 53, 0.2);
+            border-color: var(--accent-color);
+            color: var(--text-white);
+        }
         
         /* Hero Section - Removed */
         .hero {
@@ -111,6 +146,61 @@
             padding: 10rem 3rem 6rem;
             max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .featured-projects {
+            margin-bottom: 5rem;
+        }
+
+        .featured-title {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-card {
+            background: var(--background-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .featured-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .featured-card .featured-role {
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .featured-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
         .section-title {
@@ -255,112 +345,6 @@
             color: var(--background-darker);
         }
         
-        /* Skills Section - New Modern Layout */
-        .skills-section {
-            padding: 6rem 3rem;
-            background: var(--background-dark);
-        }
-        
-        .skills-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skills-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .skills-intro p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .skills-layout {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .skills-primary {
-            position: sticky;
-            top: 100px;
-        }
-
-        .skills-category-title {
-            color: var(--accent-color);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .primary-skills {
-            list-style: none;
-        }
-
-        .primary-skills li {
-            color: var(--text-white);
-            font-size: 1.2rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            font-weight: 500;
-            transition: color 0.3s, padding-left 0.3s;
-        }
-
-        .primary-skills li:hover {
-            color: var(--accent-color);
-            padding-left: 0.5rem;
-        }
-
-        .skills-secondary {
-            display: grid;
-            gap: 3rem;
-        }
-
-        .skill-group {
-            background: var(--background-darker);
-            padding: 2rem;
-            border-left: 3px solid var(--accent-color);
-            transition: transform 0.3s;
-        }
-
-        .skill-group:hover {
-            transform: translateX(5px);
-        }
-
-        .skill-group h3 {
-            color: var(--text-white);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill-tag {
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: rgba(255, 107, 53, 0.2);
-            border-color: var(--accent-color);
-            color: var(--text-white);
-        }
-        
         /* Contact Section */
         .contact-section {
             padding: 6rem 3rem;
@@ -432,13 +416,8 @@
         
         /* Responsive */
         @media (max-width: 1024px) {
-            .skills-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .skills-primary {
-                position: static;
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -461,6 +440,15 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .nav-skills-list {
+                max-width: 100%;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
             
             .projects-section {
                 padding: 8rem 1.5rem 4rem;
@@ -479,10 +467,6 @@
             
             .project-image {
                 height: 300px;
-            }
-
-            .skill-group {
-                padding: 1.5rem;
             }
         }
         
@@ -505,11 +489,52 @@
                 <a href="mailto:joshua.silva8@icloud.com">joshua.silva8@icloud.com</a>
                 <a href="https://www.linkedin.com/in/joshuasilva3276a211b/" target="_blank">LinkedIn</a>
             </div>
+            <div class="nav-skills">
+                <div class="nav-skills-title">Technical Skills</div>
+                <div class="nav-skills-list">
+                    <span class="nav-skill-tag">UE5</span>
+                    <span class="nav-skill-tag">Blueprint Visual Scripting</span>
+                    <span class="nav-skill-tag">Visual Studio</span>
+                    <span class="nav-skill-tag">Blackboard & Behavior Trees</span>
+                    <span class="nav-skill-tag">Technical Documentation</span>
+                    <span class="nav-skill-tag">Performance Optimization</span>
+                    <span class="nav-skill-tag">Rapid Prototyping</span>
+                    <span class="nav-skill-tag">Puzzle Design</span>
+                    <span class="nav-skill-tag">Level Design</span>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section id="work" class="projects-section">
-        <h2 class="section-title">Featured Work</h2>
+        <!-- Featured Projects Section -->
+        <div class="featured-projects">
+            <div class="featured-title">Featured Projects</div>
+            <div class="featured-grid">
+                <div class="featured-card" onclick="window.location.href='shadowborne.html'">
+                    <h3>Shadowborne</h3>
+                    <div class="featured-role">Technical Game Designer</div>
+                    <p>Advanced gameplay with responsive UI/UX, precision combat, and adaptive AI systems.</p>
+                </div>
+                <div class="featured-card" onclick="window.location.href='fps-project.html'">
+                    <h3>FPS Project</h3>
+                    <div class="featured-role">Technical Game Designer</div>
+                    <p>Multi-phase collaborative project showcasing FPS mechanics and versatility.</p>
+                </div>
+                <div class="featured-card" onclick="window.location.href='adventure.html'">
+                    <h3>Adventure Level</h3>
+                    <div class="featured-role">Technical Game Designer</div>
+                    <p>Indiana Jones-inspired level with puzzle systems and environmental storytelling.</p>
+                </div>
+                <div class="featured-card" onclick="window.location.href='stackobot.html'">
+                    <h3>Stack O Bot</h3>
+                    <div class="featured-role">Technical Game Designer</div>
+                    <p>Defensive shield system demonstrating resource management and UI integration.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Detailed Case Studies</h2>
         
         <!-- Project 1 -->
         <div class="project-row">
@@ -680,83 +705,6 @@
         </div>
     </section>
 
-    <section id="skills" class="skills-section">
-        <div class="skills-container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            
-            <div class="skills-intro">
-                <p>
-                    Specialized in technical game design with a focus on gameplay systems, 
-                    mechanics implementation, and player experience optimization in Unreal Engine 5.
-                </p>
-            </div>
-
-            <div class="skills-layout">
-                <!-- Primary Skills Column -->
-                <div class="skills-primary">
-                    <h3 class="skills-category-title">Core Specializations</h3>
-                    <ul class="primary-skills">
-                        <li>Gameplay Systems Design</li>
-                        <li>Level Design</li>
-                        <li>Combat Mechanics</li>
-                        <li>Blueprint Scripting</li>
-                        <li>Technical Implementation</li>
-                    </ul>
-                </div>
-
-                <!-- Secondary Skills Grid -->
-                <div class="skills-secondary">
-                    <div class="skill-group">
-                        <h3>Technical Proficiency</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Unreal Engine 5</span>
-                            <span class="skill-tag">Blueprint Visual Scripting</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Unity</span>
-                            <span class="skill-tag">3DS Max</span>
-                            <span class="skill-tag">Visual Studio</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3>Design Expertise</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Player Experience Design</span>
-                            <span class="skill-tag">Mechanics Design</span>
-                            <span class="skill-tag">Environmental Storytelling</span>
-                            <span class="skill-tag">UI/UX Implementation</span>
-                            <span class="skill-tag">Puzzle Design</span>
-                            <span class="skill-tag">AI Behavior</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3>Production & Collaboration</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Perforce</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Jira & Confluence</span>
-                            <span class="skill-tag">Agile Development</span>
-                            <span class="skill-tag">QA Testing</span>
-                            <span class="skill-tag">Technical Documentation</span>
-                            <span class="skill-tag">Cross-Discipline Communication</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3>Development Approach</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Rapid Prototyping</span>
-                            <span class="skill-tag">Iterative Design</span>
-                            <span class="skill-tag">Playtesting & Analysis</span>
-                            <span class="skill-tag">Systems Thinking</span>
-                            <span class="skill-tag">Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
