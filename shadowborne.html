@@ -333,41 +333,21 @@
         <div class="content-section">
             <h2>My Contributions</h2>
             <ul>
-                <li>Designed immersive level layouts emphasizing environmental storytelling, pacing, and player engagement</li>
+                <li>Optimized Blueprint performance across multiple gameplay systems to maintain consistent frame rates</li>
+                <li>Created adaptive enemy AI systems that scale difficulty based on player performance</li>
                 <li>Implemented responsive UI/UX healing systems using Blueprint for seamless player feedback</li>
                 <li>Developed precision-timed combat mechanics that reward player skill and timing</li>
-                <li>Created adaptive enemy AI systems that scale difficulty based on player performance</li>
+                <li>Designed immersive level layouts emphasizing environmental storytelling, pacing, and player engagement</li>
                 <li>Led QA documentation through Jira, tracking bugs and coordinating fixes across development cycles</li>
                 <li>Conducted iterative playtesting sessions and gathered actionable feedback</li>
-                <li>Optimized Blueprint performance across multiple gameplay systems to maintain consistent frame rates</li>
             </ul>
         </div>
         
         <div class="content-section">
             <h2>Challenges & Solutions</h2>
             
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Combat Difficulty Balance</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Player Feedback:</strong> "Early enemies feel too easy, but later encounters are overwhelming."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented enemy behavior variations using Blueprint that adjusted attack cooldowns, movement speed, and health based on player performance in previous encounters. Tracked combat duration and damage taken through Blueprint timers, then adjusted subsequent spawns accordingly. Added visual tells through enemy stances and attack telegraph timing that subtly communicated difficulty changes. Iterative playtesting refined these parameters until the curve felt consistently challenging but fair across different skill levels.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: Solo QA Leadership</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We keep finding the same bugs weeks apart."
-                </p>
-                <p>
-                    <strong style="color: var(--text-white);">The Solution:</strong> Established Jira workflow with four priority tiers (Critical, High, Medium, Low) and standardized bug report templates requiring reproduction steps, expected behavior, and screenshots. Implemented verification checklists requiring retesting of related systems to catch regression bugs. Scheduled dedicated two-hour testing blocks three times weekly separate from development time. This reduced recurring bugs by 75% and kept the team focused on completion-critical issues.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Blueprint Performance</h3>
+           <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 1: Blueprint Performance</h3>
                 <p style="margin-bottom: 1rem;">
                     <strong style="color: var(--text-white);">Player Feedback:</strong> "Frame drops make timing dodges impossible."
                 </p>
@@ -377,12 +357,32 @@
             </div>
 
             <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
-                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: UI/UX Feedback Systems</h3>
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 2: UI/UX Feedback Systems</h3>
                 <p style="margin-bottom: 1rem;">
                     <strong style="color: var(--text-white);">Player Feedback:</strong> "I didn't realize I was taking damage until I died."
                 </p>
                 <p>
                     <strong style="color: var(--text-white);">The Solution:</strong> Implemented layered feedback using UMG widgets and Blueprint: directional damage indicators showing attack direction and color-coded severity, screen vignette effects intensifying with damage, dynamic health bar animations with color transitions, healing particle effects with audio cues, and floating damage numbers. Post-implementation playtesting showed players accurately assessed health status without explicitly checking UI.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 3: Combat Difficulty Balance</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Player Feedback:</strong> "Early enemies feel too easy, but later encounters are overwhelming."
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Implemented enemy behavior variations using Blueprint that adjusted attack cooldowns, movement speed, and health based on player performance in previous encounters. Tracked combat duration and damage taken through Blueprint timers, then adjusted subsequent spawns accordingly. Added visual tells through enemy stances and attack telegraph timing that subtly communicated difficulty changes. Iterative playtesting refined these parameters until the curve felt consistently challenging but fair across different skill levels.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; background: var(--background-dark); padding: 2rem; border-left: 4px solid var(--accent-color);">
+                <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 1rem;">Challenge 4: Solo QA Leadership</h3>
+                <p style="margin-bottom: 1rem;">
+                    <strong style="color: var(--text-white);">Team Feedback:</strong> "We keep finding the same bugs weeks apart."
+                </p>
+                <p>
+                    <strong style="color: var(--text-white);">The Solution:</strong> Established Jira workflow with four priority tiers (Critical, High, Medium, Low) and standardized bug report templates requiring reproduction steps, expected behavior, and screenshots. Implemented verification checklists requiring retesting of related systems to catch regression bugs. Scheduled dedicated two-hour testing blocks three times weekly separate from development time. This reduced recurring bugs by 75% and kept the team focused on completion-critical issues.
                 </p>
             </div>
         </div>
